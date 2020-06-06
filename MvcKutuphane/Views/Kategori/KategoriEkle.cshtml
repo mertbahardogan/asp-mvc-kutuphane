@@ -1,0 +1,19 @@
+﻿@model MvcKutuphane.Models.Entity.TBLKATEGORI
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<form class="form-group" method="post">
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.AD)
+            @Html.TextBoxFor(m => m.AD, new { @class = "form-control", placeholder = "Kategori Adı" }) @*autocomplete="off"*@
+            @Html.ValidationMessageFor(m => m.AD)
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success">Kaydet</button>
+        </div>
+    </div>
+
+</form>
+

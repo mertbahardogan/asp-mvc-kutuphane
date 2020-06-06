@@ -1,0 +1,43 @@
+﻿
+.field-validation-error {
+    color: red;
+}
+
+.input-validation-error {
+    border: 2px solid red; /*oluşan 2.boş yollama hatasında texbox kırmızı kutu olsun istedik fakat bende çalışmadı.*/
+}
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
+    background-color: #C62828;
+}
+    .btn-group > .btn:not(:last-child):not(.dropdown-toggle):hover {
+        background-color: darkred;
+    }
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #C62828;
+}
+.table-bordered {
+    border-radius: 10px 10px 10px 10px;
+    border: 3px solid #dee2e6;
+}
+table.table-bordered.dataTable th, table.table-bordered.dataTable td {
+    text-align: center;
+    font-size: 17px;
+}
+
+.error-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.error-actions {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+    .error-actions .btn {
+        margin-right: 10px;
+    }
+
+table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting{
+    background-color:gray;
+}

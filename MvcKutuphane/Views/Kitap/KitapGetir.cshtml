@@ -1,0 +1,45 @@
+﻿@model MvcKutuphane.Models.Entity.TBLKITAP
+@{
+    ViewBag.Title = "KitapGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@using (Html.BeginForm("KitapGuncelle", "Kitap", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.AD)
+        @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(k => k.AD)*@
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.KATEGORI)
+        @Html.DropDownListFor(k => k.TBLKATEGORI.ID, (List<SelectListItem>)ViewBag.dgr1, "Kategori Seçiniz",
+       new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(k=>k.TBLKATEGORI.ID)*@
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.YAZAR)
+        @Html.DropDownListFor(k => k.TBLYAZAR.ID, (List<SelectListItem>)ViewBag.dgr2, "Yazar Seçiniz",
+      new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(k=>k.TBLYAZAR)*@
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.BASIMYIL)
+        @Html.TextBoxFor(k => k.BASIMYIL, new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(k=>k.BASIMYIL)*@
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.YAYINEVI)
+        @Html.TextBoxFor(k => k.YAYINEVI, new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(k=>k.YAYINEVI)*@
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.SAYFA)
+        @Html.TextBoxFor(k => k.SAYFA, new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(k=>k.SAYFA)*@
+    </div>
+    <div>
+        <button type="submit" class="btn btn-success">Güncelle</button>
+    </div>
+    @Html.HiddenFor(k => k.ID)
+}

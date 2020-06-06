@@ -1,0 +1,33 @@
+﻿@model MvcKutuphane.Models.Entity.TBLHAREKET
+@{
+    ViewBag.Title = "OduncVer";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<form class="form-group" method="post">
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(k => k.UYE)
+            @Html.TextBoxFor(k => k.UYE, new { @class = "form-control" })
+            @*@Html.ValidationMessageFor(k => k.AD)*@
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(k => k.KITAP)
+            @Html.TextBoxFor(k => k.KITAP, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(k => k.PERSONEL)
+            @Html.TextBoxFor(k => k.PERSONEL, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(k => k.ALISTARIH)
+            <input type="text" class="form-control" name="ALISTARIH" value="@DateTime.Now.ToShortDateString()"/>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(k => k.IADETARIH)
+            <input type="text" class="form-control" name="IADETARIH" value="@DateTime.Now.AddDays(7).ToShortDateString()" />
+        </div>
+        <button type="submit" class="btn btn-group" style="background-color:chocolate; color:white">Kitabı Ödünç Ver</button>
+        <input type="hidden" value="False" name="ISLEMDURUM" />
+    </div>
+</form>
+
