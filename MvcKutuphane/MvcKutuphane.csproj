@@ -266,12 +266,6 @@
     <Content Include="Content\img\librarym.jpg" />
     <Content Include="Content\img\old-library-book.jpg" />
     <Content Include="Content\Site.css" />
-    <Content Include="Content\Sweetalert\sweetalert2.all.js" />
-    <Content Include="Content\Sweetalert\sweetalert2.all.min.js" />
-    <Content Include="Content\Sweetalert\sweetalert2.css" />
-    <Content Include="Content\Sweetalert\sweetalert2.js" />
-    <Content Include="Content\Sweetalert\sweetalert2.min.css" />
-    <Content Include="Content\Sweetalert\sweetalert2.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Models\Entity\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -387,6 +381,11 @@
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Scripts\datatable-tr.json" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="weather\css\style.css" />
     <Content Include="weather\images\bg.jpg" />
     <Content Include="weather\images\img1.jpg" />
@@ -444,10 +443,6 @@
     <Content Include="web\css\styles.css" />
     <Content Include="web\index.html" />
     <Content Include="web\js\scripts.js" />
-    <Content Include="Content\Sweetalert\CHANGELOG.md" />
-    <Content Include="Content\Sweetalert\LICENSE" />
-    <Content Include="Content\Sweetalert\package.json" />
-    <Content Include="Content\Sweetalert\README.md" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -667,7 +662,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Content\Sweetalert\sweetalert2.d.ts" />
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>

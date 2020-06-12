@@ -37,7 +37,7 @@
             @Html.TextBoxFor(k => k.SAYFA, new { @class = "form-control" })
             @*@Html.ValidationMessageFor(k => k.SAYFA)*@
         </div>
-        <button type="submit" class="btn btn-success">Kaydet</button>
+        <button type="submit" class="btn btn-success" onclick="return swal('Başarıyla eklendi')" >Kaydet</button>
     </div>
     <input type="hidden" name="Durum" value="True" />
 </form>

@@ -6,14 +6,21 @@
 
 @using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
 {
+    @Html.AntiForgeryToken();
+
     <div style="margin-bottom:15px"></div>
     <div class="form-group">
         @Html.LabelFor(k => k.AD)
         @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
-        @Html.ValidationMessageFor(k=>k.AD)
+        @Html.ValidationMessageFor(k => k.AD)
     </div>
     <div>
         <button type="submit" class="btn btn-success">Güncelle</button>
     </div>
     @Html.HiddenFor(y => y.ID)
+}
+
+@section myscript{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 }

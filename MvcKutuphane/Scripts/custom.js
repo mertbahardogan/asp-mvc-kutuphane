@@ -67,11 +67,4 @@
     });
 });
 
-$(document).ready(function () {
-    $('#btnAlertMessage').click(function () {
-        alert("deneme");
-        swal("Here's the title!", "...and here's the text!");
-    });
-});
-
 

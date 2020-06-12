@@ -23,7 +23,7 @@ namespace MvcKutuphane.Controllers
             return View();
         }
 
-        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult KategoriEkle(TBLKATEGORI p)
         {
             if (!ModelState.IsValid)
