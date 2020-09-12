@@ -11,33 +11,33 @@
         @Html.TextBoxFor(k => k.AD, new { @class = "form-control", @requried = "required" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(k => k.KATEGORI)
+        <label>Kategori Seçin</label>
         @Html.DropDownListFor(k => k.TBLKATEGORI.ID, (IEnumerable<SelectListItem>)ViewBag.KATEGORI, "Kategori Seçiniz",
-    new { @class = "form-control", @required = "required" })     
-</div>
-<div class="form-group">
-    @Html.LabelFor(k => k.YAZAR)
-    @Html.DropDownListFor(k => k.YAZAR, (List<SelectListItem>)ViewBag.YAZAR, "Yazar Seçiniz",
-  new { @class = "form-control", @required = "required" })
-</div>
-<div class="form-group">
-    @Html.LabelFor(k => k.BASIMYIL)
-    @Html.TextBoxFor(k => k.BASIMYIL, new { @class = "form-control", @required = "required" })
-</div>
-<div class="form-group">
-    @Html.LabelFor(k => k.YAYINEVI)
-    @Html.TextBoxFor(k => k.YAYINEVI, new { @class = "form-control", @required = "required" })
-</div>
-<div class="form-group">
-    @Html.LabelFor(k => k.SAYFA)
-    @Html.TextBoxFor(k => k.SAYFA, new { @class = "form-control", @required = "required" })
-</div>
-<div class="form-group">
-    <label>Kitap Resim URL</label>
-    @Html.TextBoxFor(k => k.KITAPRESIM, new { @class = "form-control" })
-</div>
-<div>
-    <button type="submit" class="btn btn-success">Güncelle</button>
-</div>
-@Html.HiddenFor(k => k.ID)
+    new { @class = "form-control", @required = "required" })
+    </div>
+    <div class="form-group">
+        <label>Yazar Seçin</label>
+        @Html.DropDownListFor(k => k.TBLYAZAR.ID, (List<SelectListItem>)ViewBag.YAZAR, "Yazar Seçiniz",
+      new { @class = "form-control", @required = "required" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.BASIMYIL)
+        @Html.TextBoxFor(k => k.BASIMYIL, new { @class = "form-control", @required = "required" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.YAYINEVI)
+        @Html.TextBoxFor(k => k.YAYINEVI, new { @class = "form-control", @required = "required" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.SAYFA)
+        @Html.TextBoxFor(k => k.SAYFA, new { @class = "form-control", @required = "required" })
+    </div>
+    <div class="form-group">
+        <label>Kitap Resim URL</label>
+        @Html.TextBoxFor(k => k.KITAPRESIM, new { @class = "form-control" })
+    </div>
+    <div>
+        <button type="submit" class="btn btn-success">Güncelle</button>
+    </div>
+    @Html.HiddenFor(k => k.ID)
 }

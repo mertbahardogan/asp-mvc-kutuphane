@@ -66,18 +66,21 @@
                                 @for (int k = Model.DegerY.Count() - 1; k > (Model.DegerY.Count() >= 6 ? Model.DegerY.Count() - 6 : 0); k--)
                                 {
                                     var islem = Model.DegerY.ElementAt(k);
-                                    <a class="dropdown-item d-flex align-items-center">
-                                        <div class="mr-3">
-                                            <div class="icon-circle bg-success">
-                                                <i class="fas fa-book-open text-white"></i>
+                                    if (islem.GETIRILENTARIH == DateTime.Today)
+                                    {
+                                        <a class="dropdown-item d-flex align-items-center">
+                                            <div class="mr-3">
+                                                <div class="icon-circle bg-success">
+                                                    <i class="fas fa-book-open text-white"></i>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div>
-                                            <div class="small text-gray-500">Personel: @islem.TBLPERSONEL.PERSONEL</div>
-                                            @islem.TBLKITAP.AD
-                                            <div class="small text-gray-500">@islem.TBLUYELER.AD @islem.TBLUYELER.SOYAD adlı üyemiz teslim etti.</div>
-                                        </div>
-                                    </a>
+                                            <div>
+                                                <div class="small text-gray-500">Personel: @islem.TBLPERSONEL.PERSONEL</div>
+                                                @islem.TBLKITAP.AD
+                                                <div class="small text-gray-500">@islem.TBLUYELER.AD @islem.TBLUYELER.SOYAD adlı üyemiz teslim etti.</div>
+                                            </div>
+                                        </a>
+                                    }
                                 }
                                 <a class="dropdown-item text-center small text-gray-500" href="/Islem/Index">Tüm İşlemleri Göster</a>
                             </div>
@@ -106,25 +109,17 @@
                                             </div>
                                         </a>
                                     }
-                                    @*else
-                                    {
-                                        <a class="dropdown-item d-flex align-items-center">
-                                            <div class="font-weight-bold">
-                                                <div class="text-truncate">Bugün mesaj alınmadı.</div>
-                                            </div>
-                                        </a>
-                                    }*@
                                 }
 
                                 @*@foreach (var mesaj in Model.DegerX)
-                                    {
-                                        <a class="dropdown-item d-flex align-items-center">
-                                            <div class="font-weight-bold">
-                                                <div class="text-truncate">@mesaj.KONU</div>
-                                                <div class="small text-gray-500">@mesaj.AD · @mesaj.MAIL</div>
-                                            </div>
-                                        </a>
-                                    }*@
+        {
+            <a class="dropdown-item d-flex align-items-center">
+                <div class="font-weight-bold">
+                    <div class="text-truncate">@mesaj.KONU</div>
+                    <div class="small text-gray-500">@mesaj.AD · @mesaj.MAIL</div>
+                </div>
+            </a>
+        }*@
                                 <a class="dropdown-item text-center small text-gray-500" href="/Iletisim/Index/">Tüm Mesajları Görüntüle</a>
                             </div>
                         </li>

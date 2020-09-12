@@ -20,7 +20,7 @@ namespace MvcKutuphane.Controllers
             var deger1 = db.TBLCEZALAR.Sum(x => x.PARA);
             var deger2 = db.TBLILETISIM.Where(d=>d.TARIH==DateTime.Today).Count();
             var deger3 = db.TBLUYELER.Count();
-            var islemsayi = db.TBLHAREKET.Where(x=>x.ISLEMDURUM==true).Count();
+            var islemsayi = db.TBLHAREKET.Where(x=>x.ISLEMDURUM==true && x.GETIRILENTARIH==DateTime.Today).Count();
             var gunlukkazanc = db.GunlukKazanilan().Sum();
             var encokokunan = db.CokOkunanKitap().FirstOrDefault();
             var sonverilenkitap = db.BugünVerilenKitap().FirstOrDefault();

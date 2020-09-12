@@ -15,10 +15,10 @@ namespace MvcKutuphane.Controllers
     {
         DBKUTUPHANEEntities db = new DBKUTUPHANEEntities();
         // GET: Kitap
-        public ActionResult Index(int sayfa=1)
+        public ActionResult Index(int sayfa = 1)
         {
             //var kitaplar = db.TBLKITAP.ToList();
-            var kitaplar = db.TBLKITAP.ToList().ToPagedList(sayfa,6);
+            var kitaplar = db.TBLKITAP.ToList().ToPagedList(sayfa, 6);
             return View(kitaplar);
         }
 
@@ -26,7 +26,7 @@ namespace MvcKutuphane.Controllers
         public ActionResult KitapEkle()
         {
             List<SelectListItem> k = new List<SelectListItem>();
-            foreach(var item in db.TBLKATEGORI.ToList())
+            foreach (var item in db.TBLKATEGORI.ToList())
             {
                 k.Add(new SelectListItem
                 {
@@ -109,7 +109,6 @@ namespace MvcKutuphane.Controllers
                     Selected = item.ID == kitap.ID
                 }); ;
                 //Debug.WriteLine(item.AD);
-               
             }
             ViewBag.KATEGORI = k;
 
@@ -119,7 +118,8 @@ namespace MvcKutuphane.Controllers
                 y.Add(new SelectListItem
                 {
                     Text = item.AD + ' ' + item.SOYAD,
-                    Value = item.ID.ToString()
+                    Value = item.ID.ToString(),
+                    Selected = item.ID == item.ID
                 });
             }
             ViewBag.YAZAR = y;
@@ -136,17 +136,17 @@ namespace MvcKutuphane.Controllers
             var kitap = db.TBLKITAP.Find(p.ID);
             kitap.AD = p.AD;
             var ktg = db.TBLKATEGORI.Where(k => k.ID == p.KATEGORI).FirstOrDefault();
-            var yzr = db.TBLYAZAR.Where(y => y.ID == p.YAZAR).FirstOrDefault();
             kitap.KATEGORI = ktg.ID;
+            var yzr = db.TBLYAZAR.Where(y => y.ID == p.YAZAR).FirstOrDefault();
             kitap.YAZAR = yzr.ID;
             kitap.BASIMYIL = p.BASIMYIL;
             kitap.YAYINEVI = p.YAYINEVI;
             kitap.SAYFA = p.SAYFA;
-            if (
-                kitap.KITAPRESIM == null){
+            if (kitap.KITAPRESIM == null)
+            {
                 kitap.KITAPRESIM = "https://i.imgyukle.com/2020/05/02/rTu0rc.jpg";
             }
-            else{kitap.KITAPRESIM = p.KITAPRESIM;}
+            else { kitap.KITAPRESIM = p.KITAPRESIM; }
             kitap.DURUM = true; //aslında bu olmamalı
             //db.Entry(p).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
