@@ -1,0 +1,27 @@
+﻿@using MvcKutuphane.Models.Entity;
+@model List<TBLKITAP>
+@{
+    ViewBag.Title = "Yazarın Kitapları";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<a href="~/Yazar/Index/" class="btn btn-sm btn-dark">Geri</a>
+<br />
+<h2>@ViewBag.yAd Kitapları</h2>
+<br />
+<br />
+<table class="table table-striped">
+    <tr>
+        <th>Kitap Adı</th>
+        <th>Kategorisi</th>
+        <th>Yayınevi</th>
+    </tr>
+    @foreach(var x in Model)
+    {
+        <tr>
+            <td>@x.AD</td>
+            <td>@x.TBLKATEGORI.AD</td>
+            <td>@x.YAYINEVI</td>
+        </tr>
+    }
+</table>
+

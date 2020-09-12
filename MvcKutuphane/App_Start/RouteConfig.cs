@@ -14,6 +14,7 @@ namespace MvcKutuphane
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
 
+
          routes.MapRoute(
               name: "Error",
               url: "error/{kod}",

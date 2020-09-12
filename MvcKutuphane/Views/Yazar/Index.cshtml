@@ -18,23 +18,23 @@
             <th>ID</th>
             <th>AD</th>
             <th>SOYAD</th>
-            <th>DETAY</th>
             <th class="not-export-col">GÜNCELLE</th>
             <th class="not-export-col">SİL</th>
+            <th class="not-export-col">YAZARIN KİTAPLARI</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var yazar in Model)
         {
 
-            <tr>
-                <td>@yazar.ID</td>
-                <td>@yazar.AD</td>
-                <td>@yazar.SOYAD</td>
-                <td>@yazar.DETAY</td>
-                <td><a href="/Yazar/YazarGetir/@yazar.ID" class="btn btn-secondary">Güncelle</a></td>
-                <td><a href="/Yazar/YazarSil/@yazar.ID" class="btn btn-danger" onclick="return confirm('Silmek istiyor musunuz?')">Sil</a></td>
-            </tr>
+        <tr>
+            <td>@yazar.ID</td>
+            <td>@yazar.AD</td>
+            <td>@yazar.SOYAD</td>
+            <td><a href="/Yazar/YazarGetir/@yazar.ID" class="btn btn-secondary">Güncelle</a></td>
+            <td><a href="/Yazar/YazarSil/@yazar.ID" class="btn btn-danger" onclick="return confirm('Silmek istiyor musunuz?')">Sil</a></td>
+            <td><a href="/Yazar/YazarKitaplar/@yazar.ID" class="btn btn-outline-dark">Görüntüle</a></td>
+        </tr>
 
         }
     </tbody>

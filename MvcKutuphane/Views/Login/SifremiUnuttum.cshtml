@@ -1,0 +1,44 @@
+﻿@model MvcKutuphane.Models.Entity.TBLUYELER
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Şifremi Unuttum</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <p class="alert alert-info">@ViewBag.Uyari</p>
+    @using (Html.BeginForm("SifremiUnuttum", "Login", FormMethod.Post, new { enctype = "multipart/form-data", @class = "was-validated" }))
+    {
+        @Html.AntiForgeryToken()
+<div class="form-group container">
+    <h4 style="margin-top:35px;margin-left:55px; color:darkred;">Şifremi Hatırlatma Formu</h4>
+    <hr />
+    <br />
+    <br />
+    <div class="form-group">
+        <div class="col-md-10">
+            <input type="email" class="form-control" name="eposta" required placeholder="Lütfen mail adresinizi giriniz." />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Şifremi Mail Olarak Gönder" class="btn btn-danger" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <a class="btn btn-outline-secondary btn-sm" href="/Login/GirisYap/">Giriş Yap</a>
+        </div>
+    </div>
+</div>
+
+    }
+</body>
+</html>

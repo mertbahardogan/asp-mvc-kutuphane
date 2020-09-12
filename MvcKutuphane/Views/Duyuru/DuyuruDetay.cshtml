@@ -1,0 +1,30 @@
+﻿@model MvcKutuphane.Models.Entity.TBLDUYURU
+@{
+    ViewBag.Title = "DuyuruDetay";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("DuyuruGuncelle", "Duyuru", FormMethod.Post, new { @class = "was-validated" }))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <label>Duyuru Numarası</label>
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control", placeholder = "ID", @disabled = "disabled" })
+    </div>
+    <div class="form-group">
+        <label>Duyuru Kategorisi</label>
+        @Html.TextBoxFor(k => k.KATEGORI, new { @class = "form-control", placeholder = "Kategori Adı", @required = "required" })
+    </div>
+    <div class="form-group">
+        <label>Duyuru İçerik</label>
+        @Html.TextAreaFor(k => k.ICERIK, new { @class = "form-control", placeholder = "İçerik", @required = "required" })
+    </div>
+    <div class="form-group">
+        <label>Duyuru Tarih</label>
+        @Html.TextBoxFor(k => k.TARIH, new { @class = "form-control", placeholder = "Tarih", @required = "required" })
+    </div>
+    <div>
+        <button type="submit" class="btn btn-success">Güncelle</button>
+    </div>
+    @Html.HiddenFor(y => y.ID)
+}

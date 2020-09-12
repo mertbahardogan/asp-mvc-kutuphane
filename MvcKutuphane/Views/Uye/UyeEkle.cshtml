@@ -3,40 +3,40 @@
     ViewBag.Title = "UyeEkle";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
-<form class="form-group" method="post">
+<form class="form-group was-validated" method="post">
     <div>
         <div class="form-group">
             @Html.LabelFor(m => m.AD)
-            @Html.TextBoxFor(m => m.AD, new { @class = "form-control", placeholder = "Üye Adı" })
-            @*@Html.ValidationMessageFor(m => m.AD)*@
+            @Html.TextBoxFor(m => m.AD, new { @class = "form-control", placeholder = "Üye Adı", @required = "required" })
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.SOYAD)
-            @Html.TextBoxFor(m => m.SOYAD, new { @class = "form-control", placeholder = "Üye Soyadı" })
+            @Html.TextBoxFor(m => m.SOYAD, new { @class = "form-control", placeholder = "Üye Soyadı", @required = "required" })
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.MAIL)
-            @Html.TextBoxFor(m => m.MAIL, new { @class = "form-control", placeholder = "Üye Mail Adresi" })
+            @Html.TextBoxFor(m => m.MAIL, new { @class = "form-control", placeholder = "Üye Mail Adresi", @required = "required" })
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.KADI)
-            @Html.TextBoxFor(m => m.KADI, new { @class = "form-control", placeholder = "Üye Kullanıcı Adı" })
+            @Html.TextBoxFor(m => m.KADI, new { @class = "form-control", placeholder = "Üye Kullanıcı Adı", @required = "required" })
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.SIFRE)
-            @Html.TextBoxFor(m => m.SIFRE, new { @class = "form-control", placeholder = "Üye Şifresi" })
+            @Html.TextBoxFor(m => m.SIFRE, new { @class = "form-control", placeholder = "Üye Şifresi", @required = "required", @type="password" })
+            @Html.ValidationMessageFor(m => m.SIFRE)
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.FOTOGRAF)
-            @Html.TextBoxFor(m => m.FOTOGRAF, new { @class = "form-control", placeholder = "Üye Fotoğraf Linki" })
+            @Html.TextBoxFor(m => m.FOTOGRAF, new { @class = "form-control", placeholder = "Üye Fotoğraf Linki", @required = "required" })
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.TELEFON)
-            @Html.TextBoxFor(m => m.TELEFON, new { @class = "form-control", placeholder = "Üye Telefon Numarası" })
+            @Html.TextBoxFor(m => m.TELEFON, new { @class = "form-control", placeholder = "Üye Telefon Numarası", @required = "required" })
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.OKUL)
-            @Html.TextBoxFor(m => m.OKUL, new { @class = "form-control", placeholder = "Üye Okul Adı" })
+            @Html.TextBoxFor(m => m.OKUL, new { @class = "form-control", placeholder = "Üye Okul Adı", @required = "required" })
         </div>
         <div>
             <button type="submit" class="btn btn-success">Kaydet</button>

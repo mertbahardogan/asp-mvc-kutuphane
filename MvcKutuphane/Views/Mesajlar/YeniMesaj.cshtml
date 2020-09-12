@@ -1,0 +1,35 @@
+﻿@model MvcKutuphane.Models.Entity.TBLMESAJLAR
+
+@{
+    ViewBag.Title = "Yeni Mesaj";
+    Layout = "~/Views/Shared/LayoutPanel.cshtml";
+}
+
+<h2>Yeni Mesaj Oluştur</h2>
+<br />
+<form class="form-group was-validated" method="post">
+    <div>
+        <div class="form-group">
+            <label>Gönderilecek Adres</label>
+            @Html.TextBoxFor(m => m.ALICI, new { @class = "form-control", placeholder = "Alıcı Adresi", @required = "required" })
+            @*@Html.ValidationMessageFor(m => m.PERSONEL)*@
+        </div>
+        <div class="form-group">
+            <label>Konu</label>
+            @Html.TextBoxFor(m => m.KONU, new { @class = "form-control", placeholder = "Konu", @required = "required" })
+            @*@Html.ValidationMessageFor(m => m.PERSONEL)*@
+        </div>
+        <div class="form-group">
+            <label>Mesaj</label>
+            @Html.TextAreaFor(m => m.ICERIK, new { @class = "form-control", placeholder = "Mesaj", @required = "required" })
+            @*@Html.ValidationMessageFor(m => m.PERSONEL)*@
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success">Gönder</button>
+        </div>
+    </div>
+
+</form>
+
+
+

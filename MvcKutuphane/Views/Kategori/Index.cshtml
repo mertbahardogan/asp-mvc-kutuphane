@@ -5,18 +5,21 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2>Kategoriler</h2> @*Başlıklara css*@
+<h2>Kategoriler</h2>
 <hr />
 <a href="~/Kategori/KategoriEkle/" class="btn btn-dark">Yeni Kategori</a>
 <br />
 <br />
+<a href="~/Kategori/Pasif/" class="btn btn-danger btn-sm">Pasif Kategoriler</a>
 <br />
-<table class="table table-striped table-bordered responsive" oncopy='return false' oncut='return false'>
+<br />
+<table class="table table-striped table-bordered responsive" oncopy='return false' oncut='return false' id="tblKategori">
     <thead>
         <tr>
             <th>ID</th>
             <th>Kategori Adı</th>
             <th class="not-export-col">Güncelle</th>
+            <th class="not-export-col">Pasif</th>
             <th class="not-export-col">Sil</th>
         </tr>
     </thead>
@@ -27,36 +30,9 @@
             <td>@kategori.ID</td>
             <td>@kategori.AD</td>
             <td><a href="/Kategori/KategoriGetir/@kategori.ID" class="btn btn-secondary">Güncelle</a></td>
-            @*<td><a href="/Kategori/KategoriSil/@kategori.ID" class="btn btn-danger btnAlertMessage">Sil</a></td>*@
-            <td>
-               <a href="#Sil_@kategori.ID" data-toggle="modal" class="btn btn-danger">Sil</a>
-
-                    <div class="modal fade" id="Sil_@kategori.ID" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Kayıt Sil</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <h4>Kaydı silmek istiyor musunuz?</h4>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary mx-4" data-dismiss="modal">Vazgeç</button>
-                                    <a href="/Kategori/KategoriSil/@kategori.ID" class="btn btn-danger">Sil</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </td>
-           
+            <td><a class="btn btn-danger btnSil" data-id="@kategori.ID" data-url="/Kategori/KategoriSil/">Pasifleştir</a></td>
+            <td><a href="/Kategori/KaliciSil/@kategori.ID" class="btn btn-danger" onclick="return confirm('Kalıcı olarak silmek istiyor musunuz?')">Sil</a></td>
         </tr>
         }
     </tbody>
-
-
-   
 </table>
-

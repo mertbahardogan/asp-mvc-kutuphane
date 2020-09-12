@@ -1,0 +1,208 @@
+﻿@model MvcKutuphane.Models.Entity.TBLUYELER
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>Kayıt Ol | MVC Kütüphane</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Course Register Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=devanagari,latin-ext" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <link href="~/webregister/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="~/webregister/css/font-awesome.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    @*<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>*@
+    @*<script src="~/Scripts/jquery-3.0.0.min.js"></script>*@
+
+    @*<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>*@
+
+    @*<script src="~/Scripts/jquery.validate.min.js"></script>*@
+    @*<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+
+    @*<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/localization/messages_tr.js"></script>*@
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <style>
+        label.error {
+            margin-left: 200px;
+            margin-top: -10px;
+        }
+        .field-validation-error {
+            color: gray;
+            margin-left: 230px;
+            margin-top: -20px;
+        }
+    </style>
+</head>
+<body>
+    <section class="register">
+        <div class="register-full">
+            <div class="register-left">
+                <div class="register">
+                    <div class="logo">
+                        <a href="#"><span class="fa fa-graduation-cap" aria-hidden="true"></span></a>
+                    </div>
+                    <h1>Register to our course</h1>
+                    <p>
+                        Donec ipsum lorem, sodales a sagittis ut, tristique purus. Aenean in est pretium lectus euismod facilisis.
+                        Aliquam dapibus rhoncus ex quis fringilla. Proin interdum eros mauris,hendrerit suscipit lectus cursus et.
+                    </p>
+                    <div class="content3">
+                        <ul>
+                            <li><a class="" href="/Login/GirisYap/">Giriş Yap</a></li>
+                            <li><a class="read" href="/Vitrin/Index/">Siteye Dön</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="register-right">
+                <div class="register-in">
+                    <h2><span class="fa fa-pencil"></span> register here</h2>
+                    <div class="register-form">
+                        <form action="" method="post" autocomplete="off">
+                            <div class="fields-grid">
+                                <div class="styled-input agile-styled-input-top">
+                                    <span></span>
+                                    @Html.TextBoxFor(m => m.AD, new { type = "text" })
+                                    <label>Ad</label>
+                                    <span></span>
+                                </div>
+                                <div>
+                                    @Html.ValidationMessageFor(m => m.AD)
+                                </div>
+                                <div class="styled-input">
+                                    @Html.TextBoxFor(m => m.SOYAD, new { type = "text" })
+                                    <label>Soyadınız</label>
+                                    <span></span>
+                                </div>
+                                <div>
+                                    @Html.ValidationMessageFor(m => m.SOYAD)
+                                </div>
+                                <div class="styled-input">
+                                    @Html.TextBoxFor(m => m.MAIL, new { type = "email",@required="required"})
+                                    <label>Email</label>
+                                    <span></span>
+                                </div>
+                                @*<div>
+                                    @Html.ValidationMessageFor(m => m.MAIL)
+                                </div>*@
+                                <div class="styled-input">
+                                    @Html.TextBoxFor(m => m.KADI, new { type = "text" })
+                                    <label>Kullanıcı Adı</label>
+                                    <span></span>
+                                </div>
+                                <div class="styled-input">
+                                    @Html.TextBoxFor(m => m.SIFRE, new { type = "password"})
+                                    <label>Şifre</label>
+                                    <span></span>
+                                </div>
+                                <div class="styled-input">
+                                    @Html.ValidationMessageFor(x => x.SIFRE)
+                                </div>
+                                <div class="styled-input">
+                                    @Html.TextBoxFor(m => m.SIFREONAY, new { type = "password" })
+                                    <label>Şifre Tekrar</label>
+                                    <span></span>
+                                </div>
+                                <div>
+                                    @Html.ValidationMessageFor(x => x.SIFREONAY)
+                                </div>
+                                <div class="styled-input">
+                                    @Html.TextBoxFor(m => m.TELEFON, new { type = "tel" })
+                                    <label>Telefon Numarası</label>
+                                    <span></span>
+                                </div>
+
+
+                                <div class="styled-input agile-styled-input-top">
+                                    <select id="category2" name="OKUL" required="">
+                                        <option value="">Okulunuzu Seçin*</option>
+                                        <option value="Hacettepe Üniversitesi">Hacettepe Üniversitesi</option>
+                                        <option value="Orta Doğu Teknik Üniversitesi">Orta Doğu Teknik Üniversitesi</option>
+                                        <option value="Bilkent Üniversitesi">Bilkent Üniversitesi</option>
+                                        <option value="Başkent Üniversitesi">Başkent Üniversitesi</option>
+                                        <option value="Atılım Üniversitesi">Atılım Üniversitesi</option>
+                                    </select>
+                                    <span></span>
+                                </div>
+                                <div class="clear"> </div>
+                                <label class="checkbox"><input type="checkbox" name="SOZLESME" value="true" required><i></i>Okudum ve Kabul ediyorum <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">Kullanıcı Sözleşmesi</button></label>
+
+                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Kullanıcı Sözleşmesi</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+
+
+                                                3.2. Kullanıcı, sadece tanıtım, reklam, kampanya, promosyon, duyuru vb. pazarlama faaliyetleri kapsamında kullanılması ile sınırlı olmak üzere, Site’nin sahibi olan firmanın kendisine ait iletişim, portföy durumu ve demografik bilgilerini iştirakleri ya da bağlı bulunduğu grup şirketleri ile paylaşmasına muvafakat ettiğini kabul ve beyan eder. Bu kişisel bilgiler firma bünyesinde müşteri profili belirlemek, müşteri profiline uygun promosyon ve kampanyalar sunmak ve istatistiksel çalışmalar yapmak amacıyla kullanılabilecektir.
+
+                                                3.3. Gizli Bilgiler, ancak resmi makamlarca usulü dairesinde bu bilgilerin talep edilmesi halinde ve yürürlükteki emredici mevzuat hükümleri gereğince resmi makamlara açıklama yapılmasının zorunlu olduğu durumlarda resmi makamlara açıklanabilecektir.
+
+                                                4. Garanti Vermeme: İŞBU SÖZLEŞME MADDESİ UYGULANABİLİR KANUNUN İZİN VERDİĞİ AZAMİ ÖLÇÜDE GEÇERLİ OLACAKTIR. FİRMA TARAFINDAN SUNULAN HİZMETLER "OLDUĞU GİBİ” VE "MÜMKÜN OLDUĞU” TEMELDE SUNULMAKTA VE PAZARLANABİLİRLİK, BELİRLİ BİR AMACA UYGUNLUK VEYA İHLAL ETMEME KONUSUNDA TÜM ZIMNİ GARANTİLER DE DÂHİL OLMAK ÜZERE HİZMETLER VEYA UYGULAMA İLE İLGİLİ OLARAK (BUNLARDA YER ALAN TÜM BİLGİLER DÂHİL) SARİH VEYA ZIMNİ, KANUNİ VEYA BAŞKA BİR NİTELİKTE HİÇBİR GARANTİDE BULUNMAMAKTADIR.
+
+                                                5. Kayıt ve Güvenlik
+                                                Kullanıcı, doğru, eksiksiz ve güncel kayıt bilgilerini vermek zorundadır. Aksi halde bu Sözleşme ihlal edilmiş sayılacak ve Kullanıcı bilgilendirilmeksizin hesap kapatılabilecektir.
+                                                Kullanıcı, site ve üçüncü taraf sitelerdeki şifre ve hesap güvenliğinden kendisi sorumludur. Aksi halde oluşacak veri kayıplarından ve güvenlik ihlallerinden veya donanım ve cihazların zarar görmesinden Firma sorumlu tutulamaz.
+
+                                                6. Mücbir Sebep
+
+                                                Tarafların kontrolünde olmayan; tabii afetler, yangın, patlamalar, iç savaşlar, savaşlar, ayaklanmalar, halk hareketleri, seferberlik ilanı, grev, lokavt ve salgın hastalıklar, altyapı ve internet arızaları, elektrik kesintisi gibi sebeplerden (aşağıda birlikte "Mücbir Sebep” olarak anılacaktır.) dolayı sözleşmeden doğan yükümlülükler taraflarca ifa edilemez hale gelirse, taraflar bundan sorumlu değildir. Bu sürede Taraflar’ın işbu Sözleşme’den doğan hak ve yükümlülükleri askıya alınır.
+
+                                                7. Sözleşmenin Bütünlüğü ve Uygulanabilirlik
+
+                                                İşbu sözleşme şartlarından biri, kısmen veya tamamen geçersiz hale gelirse, sözleşmenin geri kalanı geçerliliğini korumaya devam eder.
+
+                                                8. Sözleşmede Yapılacak Değişiklikler
+
+                                                Firma, dilediği zaman sitede sunulan hizmetleri ve işbu sözleşme şartlarını kısmen veya tamamen değiştirebilir. Değişiklikler sitede yayınlandığı tarihten itibaren geçerli olacaktır. Değişiklikleri takip etmek Kullanıcı’nın sorumluluğundadır. Kullanıcı, sunulan hizmetlerden yararlanmaya devam etmekle bu değişiklikleri de kabul etmiş sayılır.
+
+                                                9. Tebligat
+                                                İşbu Sözleşme ile ilgili taraflara gönderilecek olan tüm bildirimler, Firma’nın bilinen e.posta adresi ve kullanıcının üyelik formunda belirttiği e.posta adresi vasıtasıyla yapılacaktır. Kullanıcı, üye olurken belirttiği adresin geçerli tebligat adresi olduğunu, değişmesi durumunda 5 gün içinde yazılı olarak diğer tarafa bildireceğini, aksi halde bu adrese yapılacak tebligatların geçerli sayılacağını kabul eder.
+
+                                                10. Delil Sözleşmesi
+                                                Taraflar arasında işbu sözleşme ile ilgili işlemler için çıkabilecek her türlü uyuşmazlıklarda Taraflar’ın defter, kayıt ve belgeleri ile ve bilgisayar kayıtları ve faks kayıtları 6100 sayılı Hukuk Muhakemeleri Kanunu uyarınca delil olarak kabul edilecek olup, kullanıcı bu kayıtlara itiraz etmeyeceğini kabul eder.
+
+                                                11. Uyuşmazlıkların Çözümü
+                                                İşbu Sözleşme’nin uygulanmasından veya yorumlanmasından doğacak her türlü uyuşmazlığın çözümünde İstanbul (Merkez) Adliyesi Mahkemeleri ve İcra Daireleri yetkilidir.
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tamam</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" value="Kayıt Ol">
+                        </form>
+                    </div>
+                </div>
+                <div class="clear"> </div>
+            </div>
+            <div class="clear"> </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,5 +1,5 @@
 ﻿$(function () {
-    var table = $(".table").DataTable({
+    var table = $(".tbldata").DataTable({
         searching: true,
         paging: true,
         "language": {
@@ -60,11 +60,103 @@
             }
         ],
         "lengthMenu": [
-            [5, 10, 15, 25, -1],
-            ["5", "10", "15", "25", "Tümü"]
+            [10, 13, 15, 25, -1],
+            ["10", "13", "15", "25", "Tümü"]
         ],
         info: false
     });
 });
 
+
+$(function () {
+    $(".table").on("click", ".btnSil", function () {
+        var btn = $(this);
+        var table = btn.parent().parent().parent().parent();
+        table = $(table).DataTable();
+        var row = btn.parent().parent();
+
+        swal({
+            title: "Emin misiniz?",
+            text: "Seçtiğiniz veri kalıcı olarak silinmek üzere!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    var id = btn.data("id");
+                    var url = btn.data("url");
+                    $.ajax({
+                        type: "GET",
+                        url: url + id,
+                        success: function () {
+                            table.row(row).remove().draw(true);
+                            swal("Başarıyla silindi!", {
+                                icon: "success",
+                            });
+                        }
+                    })
+                } else {
+                    swal("Silmekten vazgeçildi!");
+                }
+            });
+    });
+})
+
+
+//on: birden fazla event için on() açıp ayrı ayrı api gibi yazabiliriz. 
+
+//click, double click(dblclick), mouse eventleri(mouse up ve mouse down..) , .after geçici ekleme yapar içine eklenicek html kod.
+
+
+$(function () {
+    $("#myform").on("click", ".btnEkle", function () {
+        let form = $(this);
+        let kategoriInput = $("#AD");
+        let kategoriAdi = kategoriInput.val();
+        //console.log(kategoriadi);
+        $.ajax({
+            type: "GET",
+            url: "/Kategori/ekle?kategoriAdi=" + kategoriAdi,
+            success: function (data) {
+                swal(data["message"]);
+            }
+        })
+    });
+})
+
+$(function () {
+    $("form").submit(function () {
+        swal("Ekleme başarılı!", {
+            buttons: false,
+            timer: 30000,
+        });
+    }) //Süre halledilecek.
+})
+
+$(".topSil").click(function () {
+    var id = [];
+    var sayac = 0;
+    console.log("gird");
+    $("input[name='secili']:checked").each(function () {
+        id[sayac] = $(this).val();
+        sayac++;
+    });
+
+    $.ajax({
+        type: "POST",
+        url: '/Kategori/TopluSil',
+        data: { id },
+        dataType: "json",
+        success: function (gelenDeg) {
+            if (gelenDeg === "1") {
+                alert("Silme işlemi başarıyla gerçekleşti!");
+
+            }
+        },
+        error: function () {
+            alert("Makale(ler) Silinirken hata oluştu!");
+        }
+    });
+});
 

@@ -1,0 +1,36 @@
+﻿@using MvcKutuphane.Models.Entity
+@model List<TBLKATEGORI>
+@{
+    ViewBag.Title = "Pasif Kategoriler";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Kategoriler</h2>
+<hr />
+<br />
+<a href="~/Kategori/" class="btn btn-primary btn-sm">Kategorilere Dön</a>
+<br />
+<br />
+<table class="table table-striped table-bordered responsive" oncopy='return false' oncut='return false' id="tblKategori">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Kategori Adı</th>
+            <th class="not-export-col">Ekle</th>
+            <th class="not-export-col">Kalıcı Olarak Sil</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kategori in Model)
+        {
+        <tr>
+            <td>@kategori.ID</td>
+            <td>@kategori.AD</td>
+            <td><a href="/Kategori/GeriGetir/@kategori.ID" class="btn btn-secondary">Tekrar Ekle</a></td>
+            <td><a href="/Kategori/KaliciSil/@kategori.ID" class="btn btn-danger" onclick="return confirm('Kalıcı olarak silmek istiyor musunuz?')">Sil</a></td>
+
+        </tr>
+        }
+    </tbody>
+</table>

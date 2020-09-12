@@ -15,5 +15,11 @@ namespace MvcKutuphane.Models.Entity
     public partial class TBLKATEGORI
     {
     }
+
+    [MetadataType(typeof(TBLUYELERMetadata))]
+    public partial class TBLUYELER
+    {
+    }
+
 }
 

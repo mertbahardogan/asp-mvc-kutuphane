@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcKutuphane.Models.Entity;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,18 +10,14 @@ namespace MvcKutuphane.Controllers
 {
     public class IstatistikController : Controller
     {
+        DBKUTUPHANEEntities db = new DBKUTUPHANEEntities();
         // GET: Istatistik
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult HavaDurumu()
-        {
-            return View();
-        }
-
-        public ActionResult Hava()
+        public ActionResult Kur()
         {
             return View();
         }
@@ -37,17 +34,17 @@ namespace MvcKutuphane.Controllers
         {
             try
             {
-
-                if (dosya.ContentLength > 0)
+                if ( dosya!=null)
                 {
                     TempData["basarili"] = "Yükleme Başarılı.";
                     string dosyayolu = Path.Combine(Server.MapPath("~/Content/img/"), Path.GetFileName(dosya.FileName));
                     dosya.SaveAs(dosyayolu);
 
                 }
-                if (dosya.ContentLength <= 0)
+                else
                 {
-                    return View("Index");
+                    TempData["basarisiz"] = "Yükleme Başarısız.";
+                    return RedirectToAction("Galeri", "Istatistik");
                 }
             }
             catch (Exception)
@@ -55,8 +52,7 @@ namespace MvcKutuphane.Controllers
 
                 TempData["basarisiz"] = "Yükleme Başarısız.";
             }
-
-            return RedirectToAction("Galeri");
+            return RedirectToAction("Galeri", "Istatistik");
         }
     }
 }

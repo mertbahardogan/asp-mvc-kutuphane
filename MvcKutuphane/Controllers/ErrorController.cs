@@ -15,6 +15,11 @@ namespace MvcKutuphane.Controllers
             Response.TrySkipIisCustomErrors = true;
             return View();
         }
+        public ActionResult UserError()
+        {
+            Response.TrySkipIisCustomErrors = true;
+            return View();
+        }
         public ActionResult Page404(string aspxerrorpath)
         {
             if (!string.IsNullOrEmpty(aspxerrorpath))

@@ -16,13 +16,10 @@
             <th>ID</th>
             <th>Üye Adı</th>
             <th>Üye Soyadı</th>
-            <th>Mail</th>
-            <th>Kullanıcı Adı</th>
-            <th>Şifresi</th>
-            <th>Telefon</th>
             <th>Okul Adı</th>
             <th class="not-export-col">Güncelle</th>
             <th class="not-export-col">Sil</th>
+            <th class="not-export-col">Kitap Geçmişi</th>
         </tr>
     </thead>
     <tbody>
@@ -32,13 +29,10 @@
             <td>@uye.ID</td>
             <td>@uye.AD</td>
             <td>@uye.SOYAD</td>
-            <td>@uye.MAIL</td>
-            <td>@uye.KADI</td>
-            <td>@uye.SIFRE</td>
-            <td>@uye.TELEFON</td>
             <td>@uye.OKUL</td>
             <td><a href="/Uye/UyeGetir/@uye.ID" class="btn btn-secondary">Güncelle</a></td>
             <td><a href="/Uye/UyeSil/@uye.ID" class="btn btn-danger" onclick="return confirm('Silmek istiyor musunuz?')">Sil</a></td>
+            <td><a href="/Uye/KitapGecmis/@uye.ID" class="btn btn-outline-dark">Görüntüle</a></td>
         </tr>
         }
     </tbody>

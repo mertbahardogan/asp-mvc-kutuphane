@@ -4,21 +4,34 @@
 }
 
 .input-validation-error {
-    border: 2px solid red; /*oluşan 2.boş yollama hatasında texbox kırmızı kutu olsun istedik fakat bende çalışmadı.*/
+    border: 2px solid red;
 }
+
 .btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
-    background-color: #C62828;
+    background-color: darkgrey;
 }
+
     .btn-group > .btn:not(:last-child):not(.dropdown-toggle):hover {
-        background-color: darkred;
+        background-color: gray;
     }
+
+.btn-group > .btn-group:not(:first-child) > .btn, .btn-group > .btn:not(:first-child) {
+    background-color: darkgrey;
+}
+
+    .btn-group > .btn-group:not(:first-child) > .btn, .btn-group > .btn:not(:first-child):hover {
+        background-color: gray;
+    }
+
 .dropdown-item.active, .dropdown-item:active {
     background-color: #C62828;
 }
-.table-bordered {
+
+/*.table-bordered {
     border-radius: 10px 10px 10px 10px;
     border: 3px solid #dee2e6;
-}
+}*/
+
 table.table-bordered.dataTable th, table.table-bordered.dataTable td {
     text-align: center;
     font-size: 17px;
@@ -38,6 +51,7 @@ table.table-bordered.dataTable th, table.table-bordered.dataTable td {
         margin-right: 10px;
     }
 
-table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting{
-    background-color:gray;
+table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting {
+    background-color: silver;
 }
+

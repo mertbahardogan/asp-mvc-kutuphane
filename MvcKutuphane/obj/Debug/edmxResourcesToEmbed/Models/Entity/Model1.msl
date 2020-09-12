@@ -50,6 +50,7 @@
     <EntitySetMapping Name="TBLKATEGORI">
       <EntityTypeMapping TypeName="DBKUTUPHANEModel.TBLKATEGORI">
         <MappingFragment StoreEntitySet="TBLKATEGORI">
+          <ScalarProperty Name="DURUM" ColumnName="DURUM" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="AD" ColumnName="AD" />
         </MappingFragment>
@@ -81,6 +82,8 @@
     <EntitySetMapping Name="TBLUYELER">
       <EntityTypeMapping TypeName="DBKUTUPHANEModel.TBLUYELER">
         <MappingFragment StoreEntitySet="TBLUYELER">
+          <ScalarProperty Name="SOZLESME" ColumnName="SOZLESME" />
+          <ScalarProperty Name="SIFREONAY" ColumnName="SIFREONAY" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="AD" ColumnName="AD" />
           <ScalarProperty Name="SOYAD" ColumnName="SOYAD" />
@@ -114,10 +117,65 @@
     <EntitySetMapping Name="TBLILETISIM">
       <EntityTypeMapping TypeName="DBKUTUPHANEModel.TBLILETISIM">
         <MappingFragment StoreEntitySet="TBLILETISIM">
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
           <ScalarProperty Name="MESAJ" ColumnName="MESAJ" />
           <ScalarProperty Name="KONU" ColumnName="KONU" />
           <ScalarProperty Name="MAIL" ColumnName="MAIL" />
           <ScalarProperty Name="AD" ColumnName="AD" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DBKUTUPHANEModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DBKUTUPHANEModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DBKUTUPHANEModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DBKUTUPHANEModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBKUTUPHANEModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DBKUTUPHANEModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBKUTUPHANEModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DBKUTUPHANEModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DBKUTUPHANEModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="EnFazlaKitapYazar" FunctionName="DBKUTUPHANEModel.Store.EnFazlaKitapYazar" />
+    <FunctionImportMapping FunctionImportName="EnAktifUye" FunctionName="DBKUTUPHANEModel.Store.EnAktifUye" />
+    <FunctionImportMapping FunctionImportName="CokOkunanKitap" FunctionName="DBKUTUPHANEModel.Store.CokOkunanKitap" />
+    <FunctionImportMapping FunctionImportName="BasariliPersonel" FunctionName="DBKUTUPHANEModel.Store.BasariliPersonel" />
+    <FunctionImportMapping FunctionImportName="BugünVerilenKitap" FunctionName="DBKUTUPHANEModel.Store.BugünVerilenKitap" />
+    <FunctionImportMapping FunctionImportName="BugunVerilenKitapSayisi" FunctionName="DBKUTUPHANEModel.Store.BugunVerilenKitapSayisi" />
+    <FunctionImportMapping FunctionImportName="GunlukKazanilan" FunctionName="DBKUTUPHANEModel.Store.GunlukKazanilan" />
+    <EntitySetMapping Name="TBLMESAJLAR">
+      <EntityTypeMapping TypeName="DBKUTUPHANEModel.TBLMESAJLAR">
+        <MappingFragment StoreEntitySet="TBLMESAJLAR">
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="ICERIK" ColumnName="ICERIK" />
+          <ScalarProperty Name="KONU" ColumnName="KONU" />
+          <ScalarProperty Name="ALICI" ColumnName="ALICI" />
+          <ScalarProperty Name="GONDEREN" ColumnName="GONDEREN" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLDUYURU">
+      <EntityTypeMapping TypeName="DBKUTUPHANEModel.TBLDUYURU">
+        <MappingFragment StoreEntitySet="TBLDUYURU">
+          <ScalarProperty Name="DURUM" ColumnName="DURUM" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="ICERIK" ColumnName="ICERIK" />
+          <ScalarProperty Name="KATEGORI" ColumnName="KATEGORI" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -1,0 +1,35 @@
+﻿@using MvcKutuphane.Models.Entity;
+@model List<TBLDUYURU>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h2>Duyurular</h2>
+<hr />
+@Html.ActionLink("Yeni Duyuru", "DuyuruEkle", null, new { @class = "btn btn-dark" })
+<br />
+<br />
+<br />
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Duyuru No</th>
+            <th>Kategori Adı</th>
+            <th>Tarih</th>
+            <th class="not-export-col">Detaylar</th>
+            <th class="not-export-col">Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var duyuru in Model)
+        {
+        <tr>
+            <td>@duyuru.ID</td>
+            <td>@duyuru.KATEGORI</td>
+            <td>@Convert.ToDateTime(duyuru.TARIH).ToString("dd/MMM/yyyy")</td>
+            <td><a href="/Duyuru/DuyuruDetay/@duyuru.ID" class="btn btn-outline-dark">Görüntüle</a></td>
+            <td><a href="/Duyuru/DuyuruSil/@duyuru.ID" class="btn btn-danger" onclick="return confirm('Silmek istiyor musunuz?')">Sil</a></td>
+        </tr>
+        }
+    </tbody>
+</table>

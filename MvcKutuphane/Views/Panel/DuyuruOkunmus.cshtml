@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "DuyuruOkunmus";
+    Layout = "~/Views/Shared/LayoutPanel.cshtml";
+}
+
+<h2>Okunan Duyurular</h2>
+<hr />
+<br />
+<a href="~/Panel/Duyurular/" class="btn btn-primary btn-sm">Duyurulara Dön</a>
+<br />
+<br />
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Kategori</th>
+            <th>İçerik</th>
+            <th>Tarih</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var duyuru in Model)
+        {
+            <tr>
+                <td>@duyuru.KATEGORI</td>
+                <td>@duyuru.ICERIK</td>
+                <td>@Convert.ToDateTime(duyuru.TARIH).ToString("dd/MMM/yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

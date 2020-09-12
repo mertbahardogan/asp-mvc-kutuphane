@@ -74,3 +74,7 @@ W:\Visual Studio\MvcKutuphane\MvcKutuphane\obj\Debug\MvcKutuphane.csproj.CoreCom
 W:\Visual Studio\MvcKutuphane\MvcKutuphane\obj\Debug\MvcKutuphane.csproj.CopyComplete
 W:\Visual Studio\MvcKutuphane\MvcKutuphane\obj\Debug\MvcKutuphane.dll
 W:\Visual Studio\MvcKutuphane\MvcKutuphane\obj\Debug\MvcKutuphane.pdb
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\PagedList.dll
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\PagedList.Mvc.dll
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\PagedList.xml
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\PagedList.Mvc.xml

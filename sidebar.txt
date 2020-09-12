@@ -1,0 +1,86 @@
+@*<!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif, sans-serif;
+            }
+
+            .sidebar {
+                height: 100%;
+                width: 200px;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                padding-top: 16px;
+            }
+
+
+                .sidebar a {
+                    padding: 6px 8px 6px 16px;
+                    text-decoration: none;
+                    font-size: 20px;
+                    color: #f1f1f1;
+                    display: block;
+                }
+
+                    .sidebar a:hover {
+                        color: #808080;
+                        text-decoration: none;
+                    }
+
+            .main {
+                margin-left: 200px; /* Same as the width of the sidenav */
+                padding: 0px 10px;
+            }
+            .myp{
+                font-size:13px;
+                text-align:center;
+                margin-top:25px;
+                margin-left:6px;
+                color:darkcyan !important;
+            }
+
+            @@media screen and (max-height: 450px) {
+                .sidebar {
+                    padding-top: 15px;
+                }
+
+                    .sidebar a {
+                        font-size: 18px;
+                    }
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="sidebar">
+            <a href="/Home/Index/"><i class="fas fa-home"></i> &nbsp; Ana Sayfa</a>
+            <a href="/Kategori/Index/"><i class="fas fa-list"></i> &nbsp; Kategoriler</a>
+            <a href="/Kitap/Index/"><i class="fas fa-book"></i> &nbsp; Kitaplar</a>
+            <a href="/Yazar/Index/"><i class="fas fa-pen"></i> &nbsp; Yazarlar</a>
+            <a href="/Uye/Index/"><i class="fas fa-user-circle"></i> &nbsp; Üyeler</a>
+            <a href="/Personel/Index/"><i class="fas fa-user"></i> &nbsp; Personeller</a>
+            <a href="/Odunc/OduncVer/"><i class="fas fa-book-open"></i> &nbsp; Kitap Ver</a>
+            <a href="/Odunc/Index/"><i class="fas fa-book-reader"></i> &nbsp; Kitap Al</a>
+            <a href="#"><i class="fas fa-cash-register"></i> &nbsp; Kasa</a>
+            <a href="/Islem/Index/"><i class="fas fa-exchange-alt"></i> &nbsp; İşlemler</a>
+            <a href="/Vitrin/Index/"><i class="fas fa-bookmark"></i> &nbsp; Vitrin</a>
+            <a href="/Istatistik/Kur/"><i class="fas fa-dollar-sign"></i> &nbsp; Kur Apileri</a>
+            <a href="/Istatistik/Galeri/"><i class="fas fa-mountain"></i> &nbsp; Galeri</a>
+            <a href="#"><i class="fas fa-cogs"></i> &nbsp; Ayarlar</a>
+            <a href="/Iletisim/Index/"><i class="fas fa-headphones-alt"></i> &nbsp; Yardım</a>
+            <div>
+                <p class="myp">Versiyon 1.00.0</p>
+            </div>
+        </div>
+
+        <div class="main">
+
+        </div>
+    </body>
+    </html>*@

@@ -19,5 +19,6 @@ namespace MvcKutuphane.Models.Entity
         public string MAIL { get; set; }
         public string KONU { get; set; }
         public string MESAJ { get; set; }
+        public Nullable<System.DateTime> TARIH { get; set; }
     }
 }

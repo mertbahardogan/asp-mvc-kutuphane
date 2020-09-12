@@ -8,23 +8,89 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Layout</title>
+    <title>@ViewBag.Title - ADMİN</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.bootstrap4.min.css">
-
-
+    <link href="~/Content/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
 
+    <link rel="stylesheet" href="~/webside/css/style.css">   @*side için*@
 </head>
 <body>
-    @Html.Partial("Sidebar")
-    <div class="container">
-        <br />
-        @RenderBody()
+    @*@Html.Partial("Sidebar")*@
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
+            </div>
+            <h1><a href="/Home/Index/" class="logo">MVC 5 Kütüphane</a></h1>
+            <ul class="list-unstyled components mb-5">
+                <li class="active">
+                    <a href="/Home/Index/"><i class="fas fa-home mr-3"></i>Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Kategori/Index/"><i class="fas fa-list mr-3"></i>Kategoriler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Kitap/Index/"><i class="fas fa-book mr-3"></i>Kitaplar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Yazar/Index/"><i class="fas fa-pen mr-3"></i>Yazarlar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Uye/Index/"><i class="fas fa-user-circle mr-3"></i>Üyeler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Personel/Index/"><i class="fas fa-user mr-3"></i>Personeller</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Odunc/OduncVer/"><i class="fas fa-book-open mr-3"></i> Kitap Ver</a>
+                </li>
+                <li>
+                    <a href="/Odunc/Index/"><i class="fas fa-book-reader mr-3"></i> Kitap Al</a>
+                </li>
+                <li>
+                    <a href="/Islem/Index/"><i class="fas fa-exchange-alt mr-3"></i>İşlemler</a>
+                </li>
+                <li>
+                    <a href="/Duyuru/Index/"><i class="fas fa-bullhorn mr-3"></i>Duyurular</a>
+                </li>
+                <li>
+                    <a href="/Vitrin/Index/"><i class="fas fa-bookmark mr-3"></i>Vitrin</a>
+                </li>
+                <li>
+                    <a href="/Istatistik/Kur/"><i class="fas fa-dollar-sign mr-3"></i>Kur Apileri</a>
+                </li>
+                <li>
+                    <a href="/Istatistik/Galeri/"><i class="fas fa-mountain mr-3"></i>Galeri</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-cogs mr-3"></i>Ayarlar</a>
+                </li>
+                <li>
+                    <a href="/Iletisim/Index/"><i class="fas fa-paper-plane mr-3"></i>İletişim</a>
+                </li>
+            </ul>
+            <div style="text-align:center; margin-top:130px;">
+                <a class="spefooter"><u>@DateTime.Now.Year - MB</u></a>
+            </div>
+        </nav>
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            @RenderBody()
+        </div>
     </div>
+    @*<div class="container">
+            <br />
+            @RenderBody()
+        </div>*@
 
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
@@ -46,17 +112,20 @@
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    @RenderSection("myscript",false)
+    @*<script src="~/webside/js/jquery.min.js"></script>*@ @*side için*@
+    <script src="~/webside/js/popper.js"></script>
+    @*<script src="~/webside/js/bootstrap.min.js"></script>*@
+    <script src="~/webside/js/main.js"></script>
+
+
+    @RenderSection("myscript", false)
 
     <script src="~/Scripts/custom.js"></script>
-
-    
-
-    <div class="container body-content">
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Mert Bahardoğan</p>
-        </footer>
-    </div>
+    @*<div class="container body-content">
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year</p>
+            </footer>
+        </div>*@
 </body>
 </html>

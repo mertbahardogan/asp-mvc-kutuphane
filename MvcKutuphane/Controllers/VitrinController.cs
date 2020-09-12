@@ -28,6 +28,7 @@ namespace MvcKutuphane.Controllers
         [HttpPost]
         public ActionResult Index(TBLILETISIM t)
         {
+            t.TARIH = DateTime.Today;
             db.TBLILETISIM.Add(t);
             db.SaveChanges();
             return RedirectToAction("Index");

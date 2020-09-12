@@ -1,43 +1,44 @@
 ﻿@model MvcKutuphane.Models.Entity.TBLKITAP
 @{
-    ViewBag.Title = "KitapEkle";
+    ViewBag.Title = "Kitap Kayıt";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
-<form class="form-group" method="post">
+<form class="form-group was-validated" method="post" novalidate>
     <div>
         <div class="form-group">
             @Html.LabelFor(k => k.AD)
-            @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
-            @*@Html.ValidationMessageFor(k => k.AD)*@
+            @Html.TextBoxFor(k => k.AD, new { @class = "form-control", @required = "required" })
+           
         </div>
         <div class="form-group">
             @Html.LabelFor(k => k.KATEGORI)
-            @Html.DropDownListFor(k => k.TBLKATEGORI.ID, (List<SelectListItem>)ViewBag.dgr1, "Kategori Seçiniz",
-           new { @class = "form-control" })
-            @*@Html.ValidationMessageFor(k=>k.TBLKATEGORI)*@
+            @*@Html.DropDownList("KATEGORI", (IEnumerable<SelectListItem>)ViewBag.KATEGORI, "Kategori Seçiniz", new { @class = "form-control", @required= "required"})*@
+            @Html.DropDownListFor(k => k.KATEGORI, (IEnumerable<SelectListItem>)ViewBag.KATEGORI, "Kategori Seçiniz",
+        new { @class = "form-control", @required = "required" })      @*Burda yaşadığımız hatayı k.KATEGORI ve ViewBag.KATEGORI adlarını aynı yazarak düzelttik.*@
         </div>
         <div class="form-group">
             @Html.LabelFor(k => k.YAZAR)
-            @Html.DropDownListFor(k => k.TBLYAZAR.ID, (List<SelectListItem>)ViewBag.dgr2, "Yazar Seçiniz",
-          new { @class = "form-control" })
-            @*@Html.ValidationMessageFor(k=>k.TBLYAZAR)*@
+            @Html.DropDownListFor(k => k.YAZAR, (List<SelectListItem>)ViewBag.YAZAR, "Yazar Seçiniz",
+          new { @class = "form-control", @required = "required" })
         </div>
         <div class="form-group">
             @Html.LabelFor(k => k.BASIMYIL)
-            @Html.TextBoxFor(k => k.BASIMYIL, new { @class = "form-control" })
-            @*@Html.ValidationMessageFor(k => k.BASIMYIL)*@
+            @Html.TextBoxFor(k => k.BASIMYIL, new { @class = "form-control", @required = "required" })
+         
         </div>
         <div class="form-group">
             @Html.LabelFor(k => k.YAYINEVI)
-            @Html.TextBoxFor(k => k.YAYINEVI, new { @class = "form-control" })
-            @*@Html.ValidationMessageFor(k => k.YAYINEVI)*@
+            @Html.TextBoxFor(k => k.YAYINEVI, new { @class = "form-control", @required = "required" })
         </div>
         <div class="form-group">
             @Html.LabelFor(k => k.SAYFA)
-            @Html.TextBoxFor(k => k.SAYFA, new { @class = "form-control" })
-            @*@Html.ValidationMessageFor(k => k.SAYFA)*@
+            @Html.TextBoxFor(k => k.SAYFA, new { @class = "form-control", @required = "required" })
         </div>
-        <button type="submit" class="btn btn-success" onclick="return swal('Başarıyla eklendi')" >Kaydet</button>
+        <div class="form-group">
+            <label>Kitap Resim URL</label>
+            @Html.TextBoxFor(k => k.KITAPRESIM, new { @class = "form-control" })
+        </div>
+        <button type="submit" class="btn btn-success">Kaydet</button>
     </div>
     <input type="hidden" name="Durum" value="True" />
 </form>
