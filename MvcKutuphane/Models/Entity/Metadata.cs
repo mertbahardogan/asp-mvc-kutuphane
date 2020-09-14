@@ -38,12 +38,12 @@ namespace MvcKutuphane.Models.Entity
         public string SIFRE { get; set; }
 
         //[Required(ErrorMessage = "**Parola Tekrar alanı boş bırakılamaz.")]
-        //[Compare("SIFRE", ErrorMessage = "**Şifreler eşleşmiyor. Tekrar deneyin!")]
-        //[DataType(DataType.Password)]
-        //public string SIFREONAY { get; set; }
+        [Compare("SIFRE", ErrorMessage = "**Şifreler eşleşmiyor. Tekrar deneyin!")]
+        [DataType(DataType.Password)]
+        public string SIFREONAY { get; set; }
 
-        //[EmailAddress(ErrorMessage = "**Geçersiz mail adresi.")]
-        //public string MAIL { get; set; }
+        [EmailAddress(ErrorMessage = "**Geçersiz mail adresi.")]
+        public string MAIL { get; set; }
 
         //[Range(typeof(bool), "true", "true", ErrorMessage = "Lütfen sözleşmeyi kabul ediniz!")]
         //public Nullable<bool> SOZLESME { get; set; }

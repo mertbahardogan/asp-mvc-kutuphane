@@ -83,72 +83,41 @@ namespace MvcKutuphane.Controllers
         {
             var kitap = db.TBLKITAP.Find(id);
 
-            //List<SelectListItem> deger1 = (from i in db.TBLKATEGORI.ToList()
-            //                               select new SelectListItem
-            //                               {
-            //                                   Text = i.AD,
-            //                                   Value = i.ID.ToString()
-            //                               }).ToList();
-            //ViewBag.dgr1 = deger1;
+            List<SelectListItem> deger1 = (from i in db.TBLKATEGORI.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = i.AD,
+                                               Value = i.ID.ToString()
+                                           }).ToList();
+            ViewBag.dgr1 = deger1;
 
-            //List<SelectListItem> deger2 = (from i in db.TBLYAZAR.ToList()
-            //                               select new SelectListItem
-            //                               {
-            //                                   Text = i.AD + ' ' + i.SOYAD,
-            //                                   Value = i.ID.ToString()
-            //                               }).ToList();
-            //ViewBag.dgr2 = deger2;
-
-            List<SelectListItem> k = new List<SelectListItem>();
-            foreach (var item in db.TBLKATEGORI.ToList())
-            {
-                k.Add(new SelectListItem
-                {
-                    Text = item.AD,
-                    Value = item.ID.ToString(),
-                    Selected = item.ID == kitap.ID
-                }); ;
-                //Debug.WriteLine(item.AD);
-            }
-            ViewBag.KATEGORI = k;
-
-            List<SelectListItem> y = new List<SelectListItem>();
-            foreach (var item in db.TBLYAZAR.ToList())
-            {
-                y.Add(new SelectListItem
-                {
-                    Text = item.AD + ' ' + item.SOYAD,
-                    Value = item.ID.ToString(),
-                    Selected = item.ID == item.ID
-                });
-            }
-            ViewBag.YAZAR = y;
-
+            List<SelectListItem> deger2 = (from i in db.TBLYAZAR.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = i.AD + ' ' + i.SOYAD,
+                                               Value = i.ID.ToString()
+                                           }).ToList();
+            ViewBag.dgr2 = deger2;
             return View("KitapGetir", kitap);
         }
 
         public ActionResult KitapGuncelle(TBLKITAP p)
         {
-            if (!ModelState.IsValid)
-            {
-                return View("KitapGetir");
-            }
             var kitap = db.TBLKITAP.Find(p.ID);
             kitap.AD = p.AD;
-            var ktg = db.TBLKATEGORI.Where(k => k.ID == p.KATEGORI).FirstOrDefault();
-            kitap.KATEGORI = ktg.ID;
-            var yzr = db.TBLYAZAR.Where(y => y.ID == p.YAZAR).FirstOrDefault();
-            kitap.YAZAR = yzr.ID;
             kitap.BASIMYIL = p.BASIMYIL;
-            kitap.YAYINEVI = p.YAYINEVI;
             kitap.SAYFA = p.SAYFA;
+            kitap.YAYINEVI = p.YAYINEVI;
+            kitap.DURUM = true;
+            var ktg = db.TBLKATEGORI.Where(k => k.ID == p.TBLKATEGORI.ID).FirstOrDefault();
+            var yzr = db.TBLYAZAR.Where(y => y.ID == p.TBLYAZAR.ID).FirstOrDefault();
+            kitap.KATEGORI = ktg.ID;
+            kitap.YAZAR = yzr.ID;
             if (kitap.KITAPRESIM == null)
             {
                 kitap.KITAPRESIM = "https://i.imgyukle.com/2020/05/02/rTu0rc.jpg";
             }
             else { kitap.KITAPRESIM = p.KITAPRESIM; }
-            kitap.DURUM = true; //aslında bu olmamalı
-            //db.Entry(p).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

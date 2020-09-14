@@ -42,6 +42,7 @@ namespace MvcKutuphane.Controllers
             uye.OKUL = p.OKUL;
             uye.FOTOGRAF = p.FOTOGRAF;
             uye.KADI = p.KADI;
+            uye.SOZLESME = true;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

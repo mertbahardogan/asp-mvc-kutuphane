@@ -12,12 +12,12 @@
     </div>
     <div class="form-group">
         <label>Kategori Seçin</label>
-        @Html.DropDownListFor(k => k.TBLKATEGORI.ID, (IEnumerable<SelectListItem>)ViewBag.KATEGORI, "Kategori Seçiniz",
-    new { @class = "form-control", @required = "required" })
+        @Html.DropDownListFor(k => k.TBLKATEGORI.ID, (List<SelectListItem>)ViewBag.dgr1,
+   new { @class = "form-control", @required = "required" })
     </div>
     <div class="form-group">
         <label>Yazar Seçin</label>
-        @Html.DropDownListFor(k => k.TBLYAZAR.ID, (List<SelectListItem>)ViewBag.YAZAR, "Yazar Seçiniz",
+        @Html.DropDownListFor(k => k.TBLYAZAR.ID, (List<SelectListItem>)ViewBag.dgr2,
       new { @class = "form-control", @required = "required" })
     </div>
     <div class="form-group">

@@ -22,7 +22,6 @@ namespace MvcKutuphane.Controllers
         {
             return View("KategoriEkle");
         }
-
         [HttpGet]
         public ActionResult ekle(String kategoriAdi) //adı önemli değil
         {
@@ -91,14 +90,6 @@ namespace MvcKutuphane.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-        }
-
-        public ActionResult KaliciSil(int id)
-        {
-            var kt = db.TBLKATEGORI.Find(id);
-            db.TBLKATEGORI.Remove(kt);
-            db.SaveChanges();
-            return RedirectToAction("Pasif");
         }
     }
 }

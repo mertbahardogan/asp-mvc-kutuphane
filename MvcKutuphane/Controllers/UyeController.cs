@@ -11,9 +11,6 @@ namespace MvcKutuphane.Controllers
     public class UyeController : Controller
     {
         DBKUTUPHANEEntities db = new DBKUTUPHANEEntities();
-
-        public string Cyrpto { get; private set; }
-
         // GET: Uye
         public ActionResult Index()
         {
@@ -32,11 +29,11 @@ namespace MvcKutuphane.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View("PageError", "Error");
+                return View("UyeEkle");
             }
-            p.SIFREONAY = p.SIFRE;
             p.SIFRE = Crypto.Hash(p.SIFRE, "MD5");
             p.SIFREONAY = Crypto.Hash(p.SIFREONAY, "MD5");
+            p.SOZLESME = true;
             db.TBLUYELER.Add(p);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -62,20 +59,19 @@ namespace MvcKutuphane.Controllers
             {
                 return View("UyeGetir");
             }
-            //var uye = db.TBLUYELER.Find(p.ID);
-            //uye.AD = p.AD;
-            //uye.SOYAD = p.SOYAD;
-            //uye.MAIL = p.MAIL;
-            //uye.KADI = p.KADI;
-            //uye.SIFRE = p.SIFRE;
-            //uye.OKUL = p.OKUL;
-            //uye.TELEFON = p.TELEFON;
-            //uye.FOTOGRAF = p.FOTOGRAF;
-            p.SIFREONAY = p.SIFRE;
-            p.SIFRE = Crypto.Hash(p.SIFRE, "MD5");
-            p.SIFREONAY = Crypto.Hash(p.SIFREONAY, "MD5");
-            p.SOZLESME = true;
-            db.Entry(p).State = System.Data.Entity.EntityState.Modified;
+            var uye = db.TBLUYELER.Find(p.ID);
+            uye.AD = p.AD;
+            uye.SOYAD = p.SOYAD;
+            uye.MAIL = p.MAIL;
+            uye.KADI = p.KADI;
+            uye.OKUL = p.OKUL;
+            uye.TELEFON = p.TELEFON;
+            uye.FOTOGRAF = p.FOTOGRAF;
+            if(p.SIFRE!=uye.SIFRE)
+            {
+                uye.SIFRE = Crypto.Hash(p.SIFRE, "MD5");
+                uye.SIFREONAY = Crypto.Hash(p.SIFREONAY, "MD5");
+            }
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -29,8 +29,13 @@ namespace MvcKutuphane.Controllers
             uye.SIFREONAY = uye.SIFRE;
             uye.SIFRE = Crypto.Hash(uye.SIFRE, "MD5");
             uye.SIFREONAY = Crypto.Hash(uye.SIFREONAY, "MD5");
+            if (uye.FOTOGRAF == null)
+            {
+                uye.FOTOGRAF = "https://i.imgyukle.com/2020/08/04/Sw4Upt.png";
+            }
             db.TBLUYELER.Add(uye);
             db.SaveChanges();
+            TempData["Kontrol"] = "Kaydınız oluşturuldu.";
             return RedirectToAction("GirisYap", "Login");
         }
     }

@@ -23,8 +23,13 @@
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.SIFRE)
-            @Html.TextBoxFor(m => m.SIFRE, new { @class = "form-control", placeholder = "Üye Şifresi", @required = "required", @type="password" })
+            @Html.TextBoxFor(m => m.SIFRE, new { @class = "form-control", placeholder = "Üye Şifresi", @required = "required", @type = "password" })
             @Html.ValidationMessageFor(m => m.SIFRE)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.SIFREONAY)
+            @Html.TextBoxFor(m => m.SIFREONAY, new { @class = "form-control", placeholder = "Üye Şifresi", @required = "required", @type = "password" })
+            @Html.ValidationMessageFor(m => m.SIFREONAY)
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.FOTOGRAF)
