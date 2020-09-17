@@ -40,14 +40,6 @@
     <Property Name="ISLEMDURUM" Type="Boolean" />
     <Property Name="GETIRILENTARIH" Type="DateTime" Precision="0" />
   </EntityType>
-  <EntityType Name="TBLKASA">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="AY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="TUTAR" Type="Decimal" Precision="18" Scale="2" />
-  </EntityType>
   <EntityType Name="TBLKATEGORI">
     <Key>
       <PropertyRef Name="ID" />
@@ -186,7 +178,6 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="TBLCEZALAR" EntityType="Self.TBLCEZALAR" />
     <EntitySet Name="TBLHAREKET" EntityType="Self.TBLHAREKET" />
-    <EntitySet Name="TBLKASA" EntityType="Self.TBLKASA" />
     <EntitySet Name="TBLKATEGORI" EntityType="Self.TBLKATEGORI" />
     <EntitySet Name="TBLKITAP" EntityType="Self.TBLKITAP" />
     <EntitySet Name="TBLPERSONEL" EntityType="Self.TBLPERSONEL" />

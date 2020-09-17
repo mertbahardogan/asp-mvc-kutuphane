@@ -67,14 +67,6 @@
           <Property Name="MESAJ" Type="varchar" MaxLength="1000" />
           <Property Name="TARIH" Type="smalldatetime" />
         </EntityType>
-        <EntityType Name="TBLKASA">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AY" Type="varchar" MaxLength="20" />
-          <Property Name="TUTAR" Type="decimal" Precision="18" Scale="2" />
-        </EntityType>
         <EntityType Name="TBLKATEGORI">
           <Key>
             <PropertyRef Name="ID" />
@@ -269,7 +261,6 @@
           <EntitySet Name="TBLHAKKIMIZDA" EntityType="Self.TBLHAKKIMIZDA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLHAREKET" EntityType="Self.TBLHAREKET" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLILETISIM" EntityType="Self.TBLILETISIM" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TBLKASA" EntityType="Self.TBLKASA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLKATEGORI" EntityType="Self.TBLKATEGORI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLKITAP" EntityType="Self.TBLKITAP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLMESAJLAR" EntityType="Self.TBLMESAJLAR" Schema="dbo" store:Type="Tables" />
@@ -348,14 +339,6 @@
           <NavigationProperty Name="TBLPERSONEL" Relationship="DBKUTUPHANEModel.FK_TBLHAREKET_TBLPERSONEL" FromRole="TBLHAREKET" ToRole="TBLPERSONEL" />
           <Property Name="ISLEMDURUM" Type="Boolean" />
           <Property Name="GETIRILENTARIH" Type="DateTime" Precision="0" />
-        </EntityType>
-        <EntityType Name="TBLKASA">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="TUTAR" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="TBLKATEGORI">
           <Key>
@@ -495,7 +478,6 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="TBLCEZALAR" EntityType="Self.TBLCEZALAR" />
           <EntitySet Name="TBLHAREKET" EntityType="Self.TBLHAREKET" />
-          <EntitySet Name="TBLKASA" EntityType="Self.TBLKASA" />
           <EntitySet Name="TBLKATEGORI" EntityType="Self.TBLKATEGORI" />
           <EntitySet Name="TBLKITAP" EntityType="Self.TBLKITAP" />
           <EntitySet Name="TBLPERSONEL" EntityType="Self.TBLPERSONEL" />
@@ -673,15 +655,6 @@
                 <ScalarProperty Name="PERSONEL" ColumnName="PERSONEL" />
                 <ScalarProperty Name="ALISTARIH" ColumnName="ALISTARIH" />
                 <ScalarProperty Name="IADETARIH" ColumnName="IADETARIH" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TBLKASA">
-            <EntityTypeMapping TypeName="DBKUTUPHANEModel.TBLKASA">
-              <MappingFragment StoreEntitySet="TBLKASA">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="AY" ColumnName="AY" />
-                <ScalarProperty Name="TUTAR" ColumnName="TUTAR" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

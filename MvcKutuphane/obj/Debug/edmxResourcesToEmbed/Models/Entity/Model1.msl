@@ -38,15 +38,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TBLKASA">
-      <EntityTypeMapping TypeName="DBKUTUPHANEModel.TBLKASA">
-        <MappingFragment StoreEntitySet="TBLKASA">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="AY" ColumnName="AY" />
-          <ScalarProperty Name="TUTAR" ColumnName="TUTAR" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TBLKATEGORI">
       <EntityTypeMapping TypeName="DBKUTUPHANEModel.TBLKATEGORI">
         <MappingFragment StoreEntitySet="TBLKATEGORI">

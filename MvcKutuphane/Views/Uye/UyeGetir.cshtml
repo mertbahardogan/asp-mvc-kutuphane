@@ -17,6 +17,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.MAIL)
         @Html.TextBoxFor(m => m.MAIL, new { @class = "form-control", placeholder = "Üye Mail Adresi", @required = "required" })
+        @Html.ValidationMessageFor(m => m.MAIL)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.KADI)
@@ -42,12 +43,17 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.OKUL)
-        @Html.TextBoxFor(m => m.OKUL, new { @class = "form-control", placeholder = "Üye Okul Adı", @required = "required" })
+        @Html.DropDownListFor(m => m.OKUL, (IEnumerable
+<SelectListItem>)ViewBag.uyeAdminOkul, new { @class = "form-control", @required = "required" })
     </div>
     <div>
         <button type="submit" class="btn btn-success">Güncelle</button>
     </div>
     @Html.HiddenFor(y => y.ID)
+}
+@section myscript{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 }
 
 

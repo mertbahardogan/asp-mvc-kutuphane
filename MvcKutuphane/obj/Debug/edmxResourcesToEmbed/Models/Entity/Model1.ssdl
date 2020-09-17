@@ -62,14 +62,6 @@
     <Property Name="MESAJ" Type="varchar" MaxLength="1000" />
     <Property Name="TARIH" Type="smalldatetime" />
   </EntityType>
-  <EntityType Name="TBLKASA">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="AY" Type="varchar" MaxLength="20" />
-    <Property Name="TUTAR" Type="decimal" Precision="18" Scale="2" />
-  </EntityType>
   <EntityType Name="TBLKATEGORI">
     <Key>
       <PropertyRef Name="ID" />
@@ -264,7 +256,6 @@
     <EntitySet Name="TBLHAKKIMIZDA" EntityType="Self.TBLHAKKIMIZDA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLHAREKET" EntityType="Self.TBLHAREKET" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLILETISIM" EntityType="Self.TBLILETISIM" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TBLKASA" EntityType="Self.TBLKASA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLKATEGORI" EntityType="Self.TBLKATEGORI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLKITAP" EntityType="Self.TBLKITAP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLMESAJLAR" EntityType="Self.TBLMESAJLAR" Schema="dbo" store:Type="Tables" />

@@ -21,6 +21,19 @@ namespace MvcKutuphane.Controllers
         {
             var uyemail = (string)Session["Mail"];
             var degerler = db.TBLUYELER.FirstOrDefault(x => x.MAIL == uyemail);
+           
+            List<SelectListItem> uyeOkul = new List<SelectListItem>() {
+        new SelectListItem {
+            Text = "Hacettepe Üniversitesi", Value = "Hacettepe Üniversitesi"
+        },
+        new SelectListItem {
+            Text = "Orta Doğu Teknik Üniversitesi", Value = "Orta Doğu Teknik Üniversitesi"
+        },
+        new SelectListItem {
+            Text = "Bilkent Üniversitesi", Value = "Bilkent Üniversitesi"
+        },
+    };
+            ViewBag.UyeOkul = uyeOkul;
             if (degerler == null)
             {
                 return RedirectToAction("GirisYap", "Login");
@@ -33,7 +46,7 @@ namespace MvcKutuphane.Controllers
         {
             var kullanici = (string)Session["Mail"];
             var uye = db.TBLUYELER.FirstOrDefault(x => x.MAIL == kullanici);
-            if (p.SIFRE !=uye.SIFRE)
+            if (p.SIFRE != uye.SIFRE)
             {
                 uye.SIFRE = Crypto.Hash(p.SIFRE, "MD5");
                 uye.SIFREONAY = Crypto.Hash(p.SIFREONAY, "MD5");
@@ -47,7 +60,7 @@ namespace MvcKutuphane.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Kitap(int sayfa=1)
+        public ActionResult Kitap(int sayfa = 1)
         {
             if ((string)Session["Mail"] == null)
             {
@@ -56,7 +69,7 @@ namespace MvcKutuphane.Controllers
             var kullanici = (string)Session["Mail"];
             var id = db.TBLUYELER.Where(x => x.MAIL == kullanici.ToString()).Select(z => z.ID).FirstOrDefault();
             //var degerler = db.TBLHAREKET.Where(x => x.UYE == id).ToList();
-            var degerler = db.TBLHAREKET.Where(x => x.UYE == id).ToList().ToPagedList(sayfa,7);
+            var degerler = db.TBLHAREKET.Where(x => x.UYE == id).ToList().ToPagedList(sayfa, 7);
             return View(degerler);
         }
         public ActionResult Duyurular()
@@ -65,7 +78,7 @@ namespace MvcKutuphane.Controllers
             {
                 return RedirectToAction("GirisYap", "Login");
             }
-            var duyurular = db.TBLDUYURU.Where(d=>d.DURUM==true).ToList();
+            var duyurular = db.TBLDUYURU.Where(d => d.DURUM == true).ToList();
             return View(duyurular);
         }
 
@@ -81,7 +94,7 @@ namespace MvcKutuphane.Controllers
                 //db.TBLKATEGORI.Remove(kategori);
                 duyuru.DURUM = false;
                 db.SaveChanges();
-                return RedirectToAction("Duyurular","Panel");
+                return RedirectToAction("Duyurular", "Panel");
             }
         }
 

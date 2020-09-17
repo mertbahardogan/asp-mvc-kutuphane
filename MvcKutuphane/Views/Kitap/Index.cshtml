@@ -17,6 +17,7 @@
     <thead>
         <tr>
             <th>ID</th>
+            <th>Fotoğrafı</th>
             <th>Kitap Adı</th>
             <th>Kitap Yazarı</th>
             <th>Kategori</th>
@@ -33,6 +34,9 @@
         {
             <tr>
                 <td>@kitap.ID</td>
+                <td>
+                    <img class="img-fluid" src="@kitap.KITAPRESIM" alt="" />
+                </td>
                 <td>@kitap.AD</td>
                 <td>@kitap.TBLYAZAR.AD&nbsp;@kitap.TBLYAZAR.SOYAD</td>
                 <td>@kitap.TBLKATEGORI.AD</td>

@@ -58,10 +58,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="logo">
                         <a href="#"><span class="fa fa-graduation-cap" aria-hidden="true"></span></a>
                     </div>
-                    <h1>Register to our course</h1>
+                    <h1>Hoşgeldiniz!</h1>
                     <p>
-                        Donec ipsum lorem, sodales a sagittis ut, tristique purus. Aenean in est pretium lectus euismod facilisis.
-                        Aliquam dapibus rhoncus ex quis fringilla. Proin interdum eros mauris,hendrerit suscipit lectus cursus et.
+                       Kütüphane modülümüze kayıt olmak için yandaki formu doldurunuz. Kitap ödünç alma, diğer üyeler ile mesajlaşma, duyurularımızı takip etme ve 
+                        profilinizi düzenleme yapabilirsiniz.
                     </p>
                     <div class="content3">
                         <ul>
@@ -73,7 +73,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="register-right">
                 <div class="register-in">
-                    <h2><span class="fa fa-pencil"></span> register here</h2>
+                    <h2><span class="fa fa-pencil"></span> kayıt formu</h2>
                     <div class="register-form">
                         <form action="" method="post" autocomplete="off">
                             <div class="fields-grid">
@@ -95,13 +95,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     @Html.ValidationMessageFor(m => m.SOYAD)
                                 </div>
                                 <div class="styled-input">
-                                    @Html.TextBoxFor(m => m.MAIL, new { type = "email",@required="required"})
+                                    @Html.TextBoxFor(m => m.MAIL, new { type = "email"})
                                     <label>Email</label>
                                     <span></span>
                                 </div>
-                                @*<div>
+                                <div>
                                     @Html.ValidationMessageFor(m => m.MAIL)
-                                </div>*@
+                                </div>
                                 <div class="styled-input">
                                     @Html.TextBoxFor(m => m.KADI, new { type = "text" })
                                     <label>Kullanıcı Adı</label>
@@ -128,16 +128,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <label>Telefon Numarası</label>
                                     <span></span>
                                 </div>
-
-
                                 <div class="styled-input agile-styled-input-top">
                                     <select id="category2" name="OKUL" required="">
                                         <option value="">Okulunuzu Seçin*</option>
                                         <option value="Hacettepe Üniversitesi">Hacettepe Üniversitesi</option>
                                         <option value="Orta Doğu Teknik Üniversitesi">Orta Doğu Teknik Üniversitesi</option>
                                         <option value="Bilkent Üniversitesi">Bilkent Üniversitesi</option>
-                                        <option value="Başkent Üniversitesi">Başkent Üniversitesi</option>
-                                        <option value="Atılım Üniversitesi">Atılım Üniversitesi</option>
                                     </select>
                                     <span></span>
                                 </div>

@@ -4404,9 +4404,6 @@
     <Compile Include="Models\Entity\TBLILETISIM.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entity\TBLKASA.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Entity\TBLKATEGORI.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

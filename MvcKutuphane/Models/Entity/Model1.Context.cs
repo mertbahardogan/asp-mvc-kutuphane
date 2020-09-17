@@ -30,7 +30,6 @@ namespace MvcKutuphane.Models.Entity
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TBLCEZALAR> TBLCEZALAR { get; set; }
         public virtual DbSet<TBLHAREKET> TBLHAREKET { get; set; }
-        public virtual DbSet<TBLKASA> TBLKASA { get; set; }
         public virtual DbSet<TBLKATEGORI> TBLKATEGORI { get; set; }
         public virtual DbSet<TBLKITAP> TBLKITAP { get; set; }
         public virtual DbSet<TBLPERSONEL> TBLPERSONEL { get; set; }

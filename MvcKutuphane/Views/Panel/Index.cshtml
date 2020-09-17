@@ -41,7 +41,8 @@
         <tr>
             <td>
                 @Html.LabelFor(x => x.OKUL)
-                @Html.TextBoxFor(x => x.OKUL, new { @class = "form-control", @required = "required" })
+                @Html.DropDownListFor(x=>x.OKUL, (IEnumerable
+<SelectListItem>)ViewBag.UyeOkul, new { @class = "form-control", @required = "required" })
             </td>
         </tr>
         <tr>

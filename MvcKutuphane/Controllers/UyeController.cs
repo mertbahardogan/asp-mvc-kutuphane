@@ -21,6 +21,18 @@ namespace MvcKutuphane.Controllers
         [HttpGet]
         public ActionResult UyeEkle()
         {
+            List<SelectListItem> adminOkul = new List<SelectListItem>() {
+        new SelectListItem {
+            Text = "Hacettepe Üniversitesi", Value = "Hacettepe Üniversitesi"
+        },
+        new SelectListItem {
+            Text = "Orta Doğu Teknik Üniversitesi", Value = "Orta Doğu Teknik Üniversitesi"
+        },
+        new SelectListItem {
+            Text = "Bilkent Üniversitesi", Value = "Bilkent Üniversitesi"
+        },
+    };
+            ViewBag.uyeAdminOkul = adminOkul;
             return View();
         }
 
@@ -49,6 +61,18 @@ namespace MvcKutuphane.Controllers
 
         public ActionResult UyeGetir(int id)
         {
+            List<SelectListItem> adminOkul = new List<SelectListItem>() {
+        new SelectListItem {
+            Text = "Hacettepe Üniversitesi", Value = "Hacettepe Üniversitesi"
+        },
+        new SelectListItem {
+            Text = "Orta Doğu Teknik Üniversitesi", Value = "Orta Doğu Teknik Üniversitesi"
+        },
+        new SelectListItem {
+            Text = "Bilkent Üniversitesi", Value = "Bilkent Üniversitesi"
+        },
+    };
+            ViewBag.uyeAdminOkul = adminOkul;
             var uye = db.TBLUYELER.Find(id);
             return View("UyeGetir", uye);
         }

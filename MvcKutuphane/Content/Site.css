@@ -55,3 +55,18 @@ table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sor
     background-color: silver;
 }
 
+.table-bordered th, .table-bordered td {
+    text-align: center;
+}
+
+.img-fluid {
+    height: 100px !important;
+}
+
+.table th, .table td {
+    vertical-align: text-top !important;
+}
+
+.table-bordered th, .table-bordered td {
+    font-size: medium;
+}
