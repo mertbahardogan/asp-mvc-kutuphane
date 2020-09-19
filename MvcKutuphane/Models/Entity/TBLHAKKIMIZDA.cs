@@ -16,5 +16,10 @@ namespace MvcKutuphane.Models.Entity
     {
         public byte ID { get; set; }
         public string ACIKLAMA { get; set; }
+        public string ADRES { get; set; }
+        public string OZET { get; set; }
+        public string FACEBOOK { get; set; }
+        public string TWITTER { get; set; }
+        public string LINKEDIN { get; set; }
     }
 }

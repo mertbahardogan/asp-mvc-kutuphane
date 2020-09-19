@@ -37,6 +37,11 @@
     </Key>
     <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ACIKLAMA" Type="varchar(max)" />
+    <Property Name="ADRES" Type="varchar" MaxLength="100" />
+    <Property Name="OZET" Type="varchar(max)" />
+    <Property Name="FACEBOOK" Type="varchar" MaxLength="100" />
+    <Property Name="TWITTER" Type="varchar" MaxLength="100" />
+    <Property Name="LINKEDIN" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="TBLHAREKET">
     <Key>

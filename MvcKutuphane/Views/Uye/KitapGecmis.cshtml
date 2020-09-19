@@ -6,9 +6,9 @@
 }
 <a href="~/Uye/Index/" class="btn btn-sm btn-dark">Geri</a>
 <br />
-<h2>@ViewBag.uAd Kitap Geçmişi</h2>
+<h3 style="text-align:center;">@ViewBag.uAd Kitap Geçmişi</h3>
 <br />
-<br />
+<img class="img-fluid" style="margin-bottom: 30px;" src="@Model.Select(k=>k.TBLUYELER.FOTOGRAF).FirstOrDefault()" alt="" />
 <table class="table table-striped">
     <tr>
         <th>Kitap Adı</th>

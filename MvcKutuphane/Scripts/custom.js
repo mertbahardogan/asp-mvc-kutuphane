@@ -125,14 +125,14 @@ $(function () {
     });
 })
 
-$(function () {
-    $("form").submit(function () {
-        swal("Ekleme başarılı!", {
-            buttons: false,
-            timer: 30000,
-        });
-    }) //Süre halledilecek.
-})
+//$(function () {
+//    $("form").submit(function () {
+//        swal("Ekleme başarılı!", {
+//            buttons: false,
+//            timer: 30000,
+//        });
+//    }) //Süre halledilecek.
+//})
 
 $(".topSil").click(function () {
     var id = [];
@@ -142,7 +142,6 @@ $(".topSil").click(function () {
         id[sayac] = $(this).val();
         sayac++;
     });
-
     $.ajax({
         type: "POST",
         url: '/Kategori/TopluSil',
@@ -151,7 +150,6 @@ $(".topSil").click(function () {
         success: function (gelenDeg) {
             if (gelenDeg === "1") {
                 alert("Silme işlemi başarıyla gerçekleşti!");
-
             }
         },
         error: function () {

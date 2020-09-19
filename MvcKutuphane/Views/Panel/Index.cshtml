@@ -7,7 +7,13 @@
 <h2>Profilim</h2>
 <hr />
 <br />
-
+@if (ViewBag.panel!=null)
+{
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Merhaba!</strong> @ViewBag.panel
+    </div>
+}
 @using (Html.BeginForm("Index2", "Panel", FormMethod.Post, new { @class = "was-validated" }))
 {
     <table class="table table-warning">
@@ -41,7 +47,7 @@
         <tr>
             <td>
                 @Html.LabelFor(x => x.OKUL)
-                @Html.DropDownListFor(x=>x.OKUL, (IEnumerable
+                @Html.DropDownListFor(x => x.OKUL, (IEnumerable
 <SelectListItem>)ViewBag.UyeOkul, new { @class = "form-control", @required = "required" })
             </td>
         </tr>

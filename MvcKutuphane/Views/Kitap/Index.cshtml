@@ -43,7 +43,15 @@
                 <td>@kitap.BASIMYIL</td>
                 <td>@kitap.YAYINEVI</td>
                 <td>@kitap.SAYFA</td>
-                <td>@kitap.DURUM</td>
+                @*<td>@kitap.DURUM</td>*@
+                @if (kitap.DURUM == true)
+                {
+                    <td>Alınabilir</td>
+                }
+                else
+                {
+                    <td>Alınamaz</td>
+                }
                 <td><a href="/Kitap/KitapGetir/@kitap.ID" class="btn btn-secondary">Güncelle</a></td>
                 <td><a class="btn btn-danger btnSil" data-id="@kitap.ID" data-url="/Kitap/KitapSil/">Sil</a></td>
             </tr>

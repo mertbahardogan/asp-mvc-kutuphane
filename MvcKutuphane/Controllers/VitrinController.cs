@@ -13,6 +13,7 @@ namespace MvcKutuphane.Controllers
         DBKUTUPHANEEntities db = new DBKUTUPHANEEntities();
         // GET: Vitrin
 
+        [Route("AnaSayfa/Index/")]
         [HttpGet]
         public ActionResult Index()
         {
@@ -25,13 +26,15 @@ namespace MvcKutuphane.Controllers
             //var degerler = db.TBLKITAP.ToList();
         }
 
+        [Route("AnaSayfa/Index/")]
         [HttpPost]
         public ActionResult Index(TBLILETISIM t)
         {
             t.TARIH = DateTime.Today;
             db.TBLILETISIM.Add(t);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            ViewBag.info = "Mesajınız gönderildi.";
+            return RedirectToAction("Index"); //direk iletişime geri döner mi?
         }
     }
 }

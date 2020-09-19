@@ -271,6 +271,11 @@
     </Key>
     <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ACIKLAMA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ADRES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OZET" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FACEBOOK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TWITTER" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LINKEDIN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="TBLILETISIM">
     <Key>

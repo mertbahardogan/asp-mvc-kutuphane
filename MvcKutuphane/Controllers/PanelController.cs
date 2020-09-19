@@ -38,6 +38,7 @@ namespace MvcKutuphane.Controllers
             {
                 return RedirectToAction("GirisYap", "Login");
             }
+            ViewBag.panel = "Hoşgeldiniz."";
             return View(degerler);
         }
 
@@ -52,6 +53,7 @@ namespace MvcKutuphane.Controllers
                 uye.SIFREONAY = Crypto.Hash(p.SIFREONAY, "MD5");
             }
             uye.AD = p.AD;
+            uye.SOYAD = p.SOYAD;
             uye.OKUL = p.OKUL;
             uye.FOTOGRAF = p.FOTOGRAF;
             uye.KADI = p.KADI;

@@ -42,6 +42,11 @@
           </Key>
           <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ACIKLAMA" Type="varchar(max)" />
+          <Property Name="ADRES" Type="varchar" MaxLength="100" />
+          <Property Name="OZET" Type="varchar(max)" />
+          <Property Name="FACEBOOK" Type="varchar" MaxLength="100" />
+          <Property Name="TWITTER" Type="varchar" MaxLength="100" />
+          <Property Name="LINKEDIN" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="TBLHAREKET">
           <Key>
@@ -571,6 +576,11 @@
           </Key>
           <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ACIKLAMA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ADRES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OZET" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FACEBOOK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TWITTER" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LINKEDIN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TBLILETISIM">
           <Key>
@@ -720,6 +730,11 @@
           <EntitySetMapping Name="TBLHAKKIMIZDA">
             <EntityTypeMapping TypeName="DBKUTUPHANEModel.TBLHAKKIMIZDA">
               <MappingFragment StoreEntitySet="TBLHAKKIMIZDA">
+                <ScalarProperty Name="LINKEDIN" ColumnName="LINKEDIN" />
+                <ScalarProperty Name="TWITTER" ColumnName="TWITTER" />
+                <ScalarProperty Name="FACEBOOK" ColumnName="FACEBOOK" />
+                <ScalarProperty Name="OZET" ColumnName="OZET" />
+                <ScalarProperty Name="ADRES" ColumnName="ADRES" />
                 <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>

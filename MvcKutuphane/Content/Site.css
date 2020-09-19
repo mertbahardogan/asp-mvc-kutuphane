@@ -70,3 +70,12 @@ table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sor
 .table-bordered th, .table-bordered td {
     font-size: medium;
 }
+
+.was-validated .form-control:valid, .form-control.is-valid {
+    background-position: center right calc(0.975em + 0.1875rem) !important;
+    background-size: calc(0.55em + 0.175rem) calc(0.55em + 0.175rem)!important;
+}
+
+.h1,h2,h3,h4 {
+    text-align:center !important;
+}

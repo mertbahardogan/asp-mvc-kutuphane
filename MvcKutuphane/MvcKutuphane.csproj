@@ -4340,13 +4340,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AyarlarController.cs" />
     <Compile Include="Controllers\DuyuruController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IletisimController.cs" />
     <Compile Include="Controllers\IslemController.cs" />
-    <Compile Include="Controllers\IstatistikController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\KayitController.cs" />
     <Compile Include="Controllers\KitapController.cs" />
@@ -4361,6 +4361,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Classes\AyarClass.cs" />
     <Compile Include="Models\Classes\Class1.cs" />
     <Compile Include="Models\Classes\HomeClass.cs" />
     <Compile Include="Models\Entity\Metadata.cs" />
@@ -4471,8 +4472,6 @@
     <Content Include="Views\Islem\Index.cshtml" />
     <Content Include="Views\Vitrin\Index.cshtml" />
     <Content Include="Views\Error\PageError.cshtml" />
-    <Content Include="Views\Istatistik\Kur.cshtml" />
-    <Content Include="Views\Istatistik\Galeri.cshtml" />
     <Content Include="Views\Login\GirisYap.cshtml" />
     <Content Include="Views\Kayit\YeniKayit.cshtml" />
     <Content Include="Views\Shared\LayoutPanel.cshtml" />
@@ -4495,6 +4494,7 @@
     <Content Include="Views\Panel\Duyurular.cshtml" />
     <Content Include="Views\Login\SifremiUnuttum.cshtml" />
     <Content Include="Views\Panel\DuyuruOkunmus.cshtml" />
+    <Content Include="Views\Ayarlar\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -4528,7 +4528,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53689</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44312/</IISUrl>
+          <IISUrl>https://localhost:44312/Vitrin/Index</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

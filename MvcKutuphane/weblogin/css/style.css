@@ -9,7 +9,7 @@ body {
 h1 {
     margin: 0;
     color: #ffffff;
-    text-align: center;
+    text-align: center !important;
     font-size: 50px;
     font-weight: 500;
     letter-spacing: 2px;
@@ -21,7 +21,7 @@ h2 {
     color: #fc3955;
     font-size: 25px;
     font-weight: 400;
-    text-align: center;
+    text-align: center !important;
     letter-spacing: 1px;
     padding-bottom: 30px;
 }
@@ -29,7 +29,7 @@ h2 {
 p.w3l-register-p {
     color: #eee;
     font-size: 13px;
-    text-align: center;
+    text-align: center !important;
     margin-top: 2em;
 }
 

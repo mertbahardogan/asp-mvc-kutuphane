@@ -13,13 +13,13 @@ namespace MvcKutuphane
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes();
 
-
-         routes.MapRoute(
-              name: "Error",
-              url: "error/{kod}",
-              defaults: new { controller = "Error", action = "Page404", kod = UrlParameter.Optional } //burası global.asax yaptığımız yönlendirmenin adres şeması oldu bu üstte yer almalı
-      );
+         //   routes.MapRoute(
+         //        name: "Error",
+         //        url: "error/{kod}",
+         //        defaults: new { controller = "Error", action = "Page404", kod = UrlParameter.Optional } //burası global.asax yaptığımız yönlendirmenin adres şeması oldu bu üstte yer almalı
+         //);
 
             routes.MapRoute(
                 name: "Default",
