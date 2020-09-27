@@ -15,11 +15,11 @@ namespace MvcKutuphane
 
             routes.MapMvcAttributeRoutes();
 
-         //   routes.MapRoute(
-         //        name: "Error",
-         //        url: "error/{kod}",
-         //        defaults: new { controller = "Error", action = "Page404", kod = UrlParameter.Optional } //burası global.asax yaptığımız yönlendirmenin adres şeması oldu bu üstte yer almalı
-         //);
+            //   routes.MapRoute(
+            //        name: "Error",
+            //        url: "error/{kod}",
+            //        defaults: new { controller = "Error", action = "Page404", kod = UrlParameter.Optional } //burası global.asax yaptığımız yönlendirmenin adres şeması oldu bu üstte yer almalı
+            //);
 
             routes.MapRoute(
                 name: "Default",
@@ -27,7 +27,9 @@ namespace MvcKutuphane
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
-         
+
+
+
         }
     }
 }

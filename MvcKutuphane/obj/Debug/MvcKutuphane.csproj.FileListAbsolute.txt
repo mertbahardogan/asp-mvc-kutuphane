@@ -86,3 +86,8 @@ W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\Newtonsoft.Json.xml
 W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\System.Net.Http.Formatting.xml
 W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\System.Web.Http.xml
 W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\System.Web.Http.WebHost.xml
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\Antlr3.Runtime.dll
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\System.Web.Optimization.dll
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\WebGrease.dll
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\Antlr3.Runtime.pdb
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\System.Web.Optimization.xml
