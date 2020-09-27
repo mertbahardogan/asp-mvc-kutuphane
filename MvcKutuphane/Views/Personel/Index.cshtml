@@ -22,12 +22,12 @@
     <tbody>
         @foreach (var personel in Model)
         {
-            <tr>
-                <td>@personel.ID</td>
-                <td>@personel.PERSONEL</td>
-                <td><a href="/Personel/PersonelGetir/@personel.ID" class="btn btn-secondary">Güncelle</a></td>
-                <td><a href="/Personel/PersonelSil/@personel.ID" class="btn btn-danger"  onclick="return confirm('Silmek istiyor musunuz?')">Sil</a></td>
-            </tr>
+        <tr>
+            <td>@personel.ID</td>
+            <td>@personel.PERSONEL</td>
+            <td><a href="/Personel/PersonelGetir/@personel.ID" class="btn btn-secondary">Güncelle</a></td>
+            <td><a data-id="@personel.ID" data-url="/Personel/PersonelSil/" class="btn btn-danger btnSil" >Sil</a></td>
+        </tr>
         }
     </tbody>
 </table>

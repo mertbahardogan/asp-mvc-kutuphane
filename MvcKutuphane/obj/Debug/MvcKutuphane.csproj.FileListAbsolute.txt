@@ -78,3 +78,11 @@ W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\PagedList.dll
 W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\PagedList.Mvc.dll
 W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\PagedList.xml
 W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\PagedList.Mvc.xml
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\Newtonsoft.Json.dll
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\System.Net.Http.Formatting.dll
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\System.Web.Http.dll
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\System.Web.Http.WebHost.dll
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\Newtonsoft.Json.xml
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\System.Net.Http.Formatting.xml
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\System.Web.Http.xml
+W:\Visual Studio\MvcKutuphane\MvcKutuphane\bin\System.Web.Http.WebHost.xml

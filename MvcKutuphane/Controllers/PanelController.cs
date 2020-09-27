@@ -38,7 +38,6 @@ namespace MvcKutuphane.Controllers
             {
                 return RedirectToAction("GirisYap", "Login");
             }
-            ViewBag.panel = "Hoşgeldiniz."";
             return View(degerler);
         }
 

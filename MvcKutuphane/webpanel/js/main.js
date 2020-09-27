@@ -17,3 +17,21 @@
   });
 
 })(jQuery);
+
+$(function () {
+	$("form").submit(function () {
+		swal("Ýþlem baþarýlý!", {
+			buttons: false,
+			timer: 30000,
+		});
+	})
+})
+
+$(function () {
+	$("#UyeForm").submit(function () {
+		swal("Ýþlem baþarýlý!", {
+			buttons: false,
+			timer: 30000,
+		});
+	})
+})

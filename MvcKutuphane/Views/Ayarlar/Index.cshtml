@@ -32,7 +32,7 @@
         </tr>
     }
 </table>
-<button type="button" style=" margin-left: 650px;" class="btn btn-outline-dark" data-toggle="modal" data-target="#modalAyarlar">
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAyarlar">
     Ayarları Güncelle
 </button>
 <div class="modal" id="modalAyarlar">
@@ -40,6 +40,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Ayarları Güncelle</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <form method="post" action="/Ayarlar/AyarlarGuncelle">
                 <div class="modal-body">
@@ -53,15 +54,15 @@
                     <input type="text" name="OZET" class="form-control" required />
                     <br />
                     <label>Facebook Linki</label>
-                    <input type="text" name="FACEBOOK" class="form-control" required />
+                    <input type="text" name="FACEBOOK" class="form-control" value="https://" required />
                     <br />
                     <label>Twitter Linki</label>
-                    <input type="text" name="TWITTER" class="form-control" required />
+                    <input type="text" name="TWITTER" class="form-control" value="https://" required />
                     <br />
                     <label>Linkedin Linki</label>
-                    <input type="text" name="LINKEDIN" class="form-control" required />
+                    <input type="text" name="LINKEDIN" class="form-control" value="https://" required />
                     <br />
-                    <button class="btn btn-info">Kaydet</button>
+                    <button class="btn btn-dark align-content-center">Kaydet</button>
                 </div>
             </form>
         </div>

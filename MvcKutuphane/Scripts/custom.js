@@ -55,7 +55,7 @@
             },
             {
                 extend: 'colvis',
-                text: 'Sütun Seç',
+                text: 'Seç',
                 postfixButtons: ['colvisRestore']
             }
         ],
@@ -67,12 +67,12 @@
     });
 });
 
-
+//btnsil
 $(function () {
     $(".table").on("click", ".btnSil", function () {
         var btn = $(this);
         var table = btn.parent().parent().parent().parent();
-        table = $(table).DataTable();
+        table = $(table).DataTable(); //.DataTable()
         var row = btn.parent().parent();
 
         swal({
@@ -108,7 +108,7 @@ $(function () {
 
 //click, double click(dblclick), mouse eventleri(mouse up ve mouse down..) , .after geçici ekleme yapar içine eklenicek html kod.
 
-
+//btnekle
 $(function () {
     $("#myform").on("click", ".btnEkle", function () {
         let form = $(this);
@@ -125,36 +125,14 @@ $(function () {
     });
 })
 
-//$(function () {
-//    $("form").submit(function () {
-//        swal("Ekleme başarılı!", {
-//            buttons: false,
-//            timer: 30000,
-//        });
-//    }) //Süre halledilecek.
-//})
 
-$(".topSil").click(function () {
-    var id = [];
-    var sayac = 0;
-    console.log("gird");
-    $("input[name='secili']:checked").each(function () {
-        id[sayac] = $(this).val();
-        sayac++;
-    });
-    $.ajax({
-        type: "POST",
-        url: '/Kategori/TopluSil',
-        data: { id },
-        dataType: "json",
-        success: function (gelenDeg) {
-            if (gelenDeg === "1") {
-                alert("Silme işlemi başarıyla gerçekleşti!");
-            }
-        },
-        error: function () {
-            alert("Makale(ler) Silinirken hata oluştu!");
-        }
-    });
-});
+//ekleme başarılı
+$(function () {
+    $("form").submit(function () {
+        swal("Ekleme başarılı!", {
+            buttons: false,
+            timer: 30000,
+        });
+    })
+})
 

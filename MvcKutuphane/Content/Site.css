@@ -79,3 +79,7 @@ table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sor
 .h1,h2,h3,h4 {
     text-align:center !important;
 }
+
+.dropdown-toggle::after {
+    right: -1px !important;
+}

@@ -25,7 +25,7 @@ namespace MvcKutuphane.Controllers
         [HttpGet]
         public ActionResult ekle(String kategoriAdi) //adı önemli değil
         {
-            if (!ModelState.IsValid && kategoriAdi == "" && kategoriAdi.Length==2)
+            if (!ModelState.IsValid && kategoriAdi == "" && kategoriAdi.Length<=2)
             {
                 return RedirectToAction("Index");
             }
