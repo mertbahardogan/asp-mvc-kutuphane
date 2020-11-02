@@ -7,12 +7,7 @@
 <h2>Profilim</h2>
 <hr />
 <br />
-
-<div id="results" class="alert alert-success" style="display:none;">
-    <b>Başarılı!</b> Bilgileriniz kaydedildi.
-</div>
-
-@using (Html.BeginForm("Index2", "Panel", FormMethod.Post, new { @class = "was-validated", id = "UyeForm" }))
+@using (Html.BeginForm("Index2", "Panel", FormMethod.Post, new { @class = "was-validated"}))
 {
     <table class="table table-warning">
         <tr>
@@ -76,32 +71,6 @@
         </tr>
     </table>
 }
-@*<script>
-    $("UyeForm").submit(function (event) {
-        event.preventDefault();
-
-        $.ajax({
-            url: "",
-            type: "POST",
-            data: {
-               
-            },
-            beforeSend: function () {
-                $("#ajax-loader").show();
-            },
-            complete: function () {
-                $("#ajax-loader").hide();
-            },
-            success: function (data) {
-                $("#results").show();
-            },
-            error: function () {
-                alert("Hata oluştu.");
-            }
-        });
-    });
-</script>*@
-
 @section myscript{
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

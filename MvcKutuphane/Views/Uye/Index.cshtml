@@ -9,6 +9,12 @@
 <a href="~/Uye/UyeEkle/" class="btn btn-dark">Yeni Üye</a> @*html helper yapalım hepsini biri hariç ve formlar begin form olsun biri hariç*@
 <br />
 <br />
+@if (TempData["errorUye"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["errorUye"]
+    </div>
+}
 <br />
 <table class="table table-striped table-bordered">
     <thead>
@@ -26,18 +32,18 @@
     <tbody>
         @foreach (var uye in Model)
         {
-        <tr>
-            <td>@uye.ID</td>
-            <td>
-                <img class="img-fluid" src="@uye.FOTOGRAF" alt="" />
-            </td>
-            <td>@uye.AD</td>
-            <td>@uye.SOYAD</td>
-            <td>@uye.OKUL</td>
-            <td><a href="/Uye/UyeGetir/@uye.ID" class="btn btn-secondary">Güncelle</a></td>
-            <td><a href="/Uye/UyeSil/@uye.ID" class="btn btn-danger" onclick="return confirm('Silmek istiyor musunuz?')">Sil</a></td>
-            <td><a href="/Uye/KitapGecmis/@uye.ID" class="btn btn-outline-dark">Görüntüle</a></td>
-        </tr>
+            <tr>
+                <td>@uye.ID</td>
+                <td>
+                    <img class="img-fluid" src="@uye.FOTOGRAF" alt="" />
+                </td>
+                <td>@uye.AD</td>
+                <td>@uye.SOYAD</td>
+                <td>@uye.OKUL</td>
+                <td><a href="/Uye/UyeGetir/@uye.ID" class="btn btn-secondary">Güncelle</a></td>
+                <td><a href="/Uye/UyeSil/@uye.ID" class="btn btn-danger" onclick="return confirm('Silmek istiyor musunuz?')">Sil</a></td>
+                <td><a href="/Uye/KitapGecmis/@uye.ID" class="btn btn-outline-dark">Görüntüle</a></td>
+            </tr>
         }
     </tbody>
 </table>

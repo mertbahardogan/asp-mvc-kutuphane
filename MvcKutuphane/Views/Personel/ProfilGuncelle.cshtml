@@ -1,0 +1,62 @@
+﻿@model MvcKutuphane.Models.Entity.TBLPERSONEL
+@{
+    ViewBag.Title = "ProfilGuncelle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>ProfilGuncelle</h2>
+<hr />
+@if (TempData["profil"] != null)
+{
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong> </strong> @TempData["profil"]
+    </div>
+}
+<br />
+@using (Html.BeginForm("ProfilGuncelle2", "Personel", FormMethod.Post, new { @class = "was-validated" }))
+{
+    <table class="table table-warning">
+        <tr>
+            <td>
+                <label>Personel Numarası</label>
+                @Html.TextBoxFor(p => p.ID, new { @class = "form-control", disabled = "disabled" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Kullanıcı Adı</label>
+                @Html.TextBoxFor(p => p.KullaniciAdi, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Ad</label>
+                @Html.TextBoxFor(p => p.PERSONEL, new { @class = "form-control" })
+            </td>
+        </tr>
+        @*<tr>
+                <td>
+                    <label>Soyad</label>
+                    @Html.TextBoxFor(p => p.Soyad, new { @class = "form-control", disabled = "disabled" })
+                </td>
+            </tr>*@
+        <tr>
+            <td>
+                <label>Parola</label>
+                @Html.TextBoxFor(p => p.Sifre, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Fotoğraf</label>
+                @Html.TextBoxFor(p => p.Fotograf, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-danger">Bilgileri Güncelle</button>
+            </td>
+        </tr>
+    </table>
+}

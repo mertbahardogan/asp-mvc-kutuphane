@@ -17,12 +17,10 @@ namespace MvcKutuphane.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            //Sadece classes için ıenumerable ekledik ve buraya geldik
             Class1 cs = new Class1();
-            cs.Deger1 = db.TBLKITAP.ToList(); 
+            cs.Deger1 = db.TBLKITAP.ToList();
             cs.Deger2 = db.TBLHAKKIMIZDA.ToList();
             return View(cs);
-
             //var degerler = db.TBLKITAP.ToList();
         }
 
@@ -33,8 +31,8 @@ namespace MvcKutuphane.Controllers
             t.TARIH = DateTime.Today;
             db.TBLILETISIM.Add(t);
             db.SaveChanges();
-            ViewBag.info = "Mesajınız gönderildi.";
-            return RedirectToAction("Index"); //direk iletişime geri döner mi?
+            TempData.Add("iletisim", "Mesajınız başarıyla gönderildi!");
+            return RedirectToAction("Index");
         }
     }
 }

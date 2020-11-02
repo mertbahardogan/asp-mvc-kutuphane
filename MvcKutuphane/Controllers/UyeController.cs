@@ -4,10 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using MvcKutuphane.CustomClasses;
 using MvcKutuphane.Models.Entity;
 
 namespace MvcKutuphane.Controllers
 {
+    [CustomAuthorization(LoginPage = "~/AdminLogin/GirisYap/")]
     public class UyeController : Controller
     {
         DBKUTUPHANEEntities db = new DBKUTUPHANEEntities();
@@ -33,6 +35,7 @@ namespace MvcKutuphane.Controllers
         },
     };
             ViewBag.uyeAdminOkul = adminOkul;
+
             return View();
         }
 
@@ -42,6 +45,12 @@ namespace MvcKutuphane.Controllers
             if (!ModelState.IsValid)
             {
                 return View("UyeEkle");
+            }
+            var uye = db.TBLUYELER.FirstOrDefault(x => x.MAIL == p.MAIL);
+            if (uye != null)
+            {
+                TempData.Add("errorUye", "Bu mail adresi kullanılmaktadır.");
+                return RedirectToAction("Index");
             }
             p.SIFRE = Crypto.Hash(p.SIFRE, "MD5");
             p.SIFREONAY = Crypto.Hash(p.SIFREONAY, "MD5");
@@ -74,6 +83,8 @@ namespace MvcKutuphane.Controllers
     };
             ViewBag.uyeAdminOkul = adminOkul;
             var uye = db.TBLUYELER.Find(id);
+
+
             return View("UyeGetir", uye);
         }
 
@@ -105,6 +116,8 @@ namespace MvcKutuphane.Controllers
             var gec = db.TBLHAREKET.Where(x => x.UYE == id).ToList();
             var uyeAd = db.TBLUYELER.Where(y => y.ID == id).Select(z => z.AD + " " + z.SOYAD).FirstOrDefault();
             ViewBag.uAd = uyeAd;
+
+
             return View(gec);
         }
     }

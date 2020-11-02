@@ -18,7 +18,7 @@
     <link href="~/Content/PagedList.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="~/webside/css/style.css">   @*side için*@
+    <link rel="stylesheet" href="~/Themes/AdminPanel/css/style.css">   @*side için*@
 </head>
 <body>
     @*@wHtml.Partial("Sidebar")*@
@@ -30,7 +30,16 @@
                     <span class="sr-only">Toggle Menu</span>
                 </button>
             </div>
-            <h1><a href="/Home/Index/" class="logo">MVC 5 Kütüphane</a></h1>
+            @if (TempData["message"] != null)
+            {
+                <div class="alert alert-info">
+                    @TempData["message"]
+                </div>
+            }
+            else
+            {
+                <h1><a href="/Home/Index/" class="logo">MVC 5 Kütüphane</a></h1>
+            }
             <ul class="list-unstyled components mb-5">
                 <li class="active">
                     <a href="/Home/Index/"><i class="fas fa-home mr-3"></i>Ana Sayfa</a>
@@ -44,12 +53,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/Yazar/Index/"><i class="fas fa-pen mr-3"></i>Yazarlar</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="/Uye/Index/"><i class="fas fa-user-circle mr-3"></i>Üyeler</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/Personel/Index/"><i class="fas fa-user mr-3"></i>Personeller</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="/Odunc/OduncVer/"><i class="fas fa-book-open mr-3"></i> Kitap Ver</a>
                 </li>
@@ -66,15 +77,13 @@
                     <a href="/Iletisim/Index/"><i class="fas fa-paper-plane mr-3"></i>İletişim</a>
                 </li>
                 <li>
-                    <a href="/Ayarlar/Index/"><i class="fas fa-cogs mr-3"></i>Ayarlar</a>
-                </li>
-                <li>
                     <a href="/AnaSayfa/Index/"><i class="fas fa-bookmark mr-3"></i>Site'ye Geç</a>
                 </li>
             </ul>
             <div style="text-align:center; margin-top:130px;">
                 <a class="spefooter"><u>@DateTime.Now.Year - MB</u></a>
             </div>
+
         </nav>
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
@@ -107,9 +116,9 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     @*<script src="~/webside/js/jquery.min.js"></script>*@ @*side için*@
-    <script src="~/webside/js/popper.js"></script>
+    <script src="~/Themes/AdminPanel/js/popper.js"></script>
     @*<script src="~/webside/js/bootstrap.min.js"></script>*@
-    <script src="~/webside/js/main.js"></script>
+    <script src="~/Themes/AdminPanel/js/main.js"></script>
 
 
     @RenderSection("myscript", false)

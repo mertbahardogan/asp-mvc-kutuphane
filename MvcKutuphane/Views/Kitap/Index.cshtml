@@ -11,6 +11,12 @@
 @Html.ActionLink("Yeni Kitap", "KitapEkle", null, new { @class = "btn btn-dark" })
 <br />
 <br />
+@if (TempData["errorKitap"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["errorKitap"]
+    </div>
+}
 <br />
 
 <table class="table table-striped table-bordered">

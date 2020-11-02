@@ -27,7 +27,7 @@ namespace MvcKutuphane.Controllers
             //var bilgiler = db.TBLUYELER.FirstOrDefault(x => x.MAIL == uye.MAIL && x.SIFRE == uye.SIFRE);
             if (bilgiler != null)
             {
-                FormsAuthentication.SetAuthCookie(bilgiler.MAIL, false);        //Beni hatırla için false olan değer değişti. uye.benihatirla
+                FormsAuthentication.SetAuthCookie(bilgiler.MAIL, false); 
                 Session["Mail"] = bilgiler.MAIL.ToString();
                 Session["Fotograf"] = bilgiler.FOTOGRAF.ToString();
                 Session["Ad"] = bilgiler.AD.ToString();
@@ -38,7 +38,6 @@ namespace MvcKutuphane.Controllers
             {
                 TempData["Kontrol"] = "Kullanıcı adı yada parola yanlış.";
                 return View();
-
             }
         }
 

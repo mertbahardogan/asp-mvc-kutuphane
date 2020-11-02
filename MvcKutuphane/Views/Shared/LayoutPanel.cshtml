@@ -1,5 +1,4 @@
-﻿@*@model MvcKutuphane.Models.Entity.TBLUYELER*@
-@{
+﻿@{
     Layout = null;
 }
 
@@ -15,7 +14,7 @@
     <title>@ViewBag.Title - MVC5 Proje</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="~/webpanel/css/style.css">
+    <link rel="stylesheet" href="~/Themes/UyePanel/css/style.css">
     <link href="~/Content/Site.css" rel="stylesheet" />
     <link href="~/Content/PagedList.css" rel="stylesheet" />
 </head>
@@ -27,7 +26,7 @@
                 <button type="button" id="sidebarCollapse" class="btn btn-primary">
                 </button>
             </div>
-            <div class="img bg-wrap text-center py-4" style="background-image: url('../../webpanel/images/bg_1.jpg');">
+            <div class="img bg-wrap text-center py-4" style="        background-image: url('../../Themes/UyePanel/images/bg_1.jpg');">
                 <div class="user-logo">
                     <div class="img" style="background-image: url('@Session["Fotograf"]');"></div>
                     <h3>@Session["Ad"] @Session["Soyad"]</h3>
@@ -67,11 +66,12 @@
         <div id="content" class="p-4 p-md-5 pt-5">
             @RenderBody()
         </div>
+       
     </div>
-    <script src="~/webpanel/js/jquery.min.js"></script>
-    <script src="~/webpanel/js/popper.js"></script>
-    <script src="~/webpanel/js/bootstrap.min.js"></script>
-    <script src="~/webpanel/js/main.js"></script>
+    <script src="~/Themes/UyePanel/js/jquery.min.js"></script>
+    <script src="~/Themes/UyePanel/js/popper.js"></script>
+    <script src="~/Themes/UyePanel/js/bootstrap.min.js"></script>
+    <script src="~/Themes/UyePanel/js/main.js"></script>
     @RenderSection("myscript", false)
 </body>
 </html>

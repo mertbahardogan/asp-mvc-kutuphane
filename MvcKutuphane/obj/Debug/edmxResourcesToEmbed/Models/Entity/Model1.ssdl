@@ -106,6 +106,10 @@
     </Key>
     <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PERSONEL" Type="varchar" MaxLength="50" />
+    <Property Name="KullaniciAdi" Type="varchar" MaxLength="20" />
+    <Property Name="Sifre" Type="varchar" MaxLength="60" />
+    <Property Name="Rol" Type="varchar" MaxLength="20" />
+    <Property Name="Fotograf" Type="varchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="TBLUYELER">
     <Key>

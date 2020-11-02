@@ -11,6 +11,8 @@ namespace MvcKutuphane.Models.Classes
     {
         public IEnumerable<TBLILETISIM> DegerX { get; set; }
         public IEnumerable<TBLHAREKET> DegerY { get; set; }
+        public IEnumerable<TBLPERSONEL> DegerA { get; set; }
+
 
     }
 }

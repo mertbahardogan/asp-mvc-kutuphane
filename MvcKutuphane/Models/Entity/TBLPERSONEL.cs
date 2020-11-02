@@ -22,6 +22,10 @@ namespace MvcKutuphane.Models.Entity
     
         public byte ID { get; set; }
         public string PERSONEL { get; set; }
+        public string KullaniciAdi { get; set; }
+        public string Sifre { get; set; }
+        public string Rol { get; set; }
+        public string Fotograf { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBLHAREKET> TBLHAREKET { get; set; }

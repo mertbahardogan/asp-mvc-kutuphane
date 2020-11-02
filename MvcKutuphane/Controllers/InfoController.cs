@@ -29,6 +29,27 @@ namespace MvcKutuphane.Controllers
             return Ok<string>("Personel Kaydedildi.");
         }
 
+        public IHttpActionResult PutPersonel(int id)
+        {
+            TBLPERSONEL personel = db.TBLPERSONEL.FirstOrDefault(k => k.ID == id);
+            personel.PERSONEL = " - Güncel";
+
+            db.SaveChanges();
+            return Ok<string>("Personel güncellenmiştir...");
+        }
+
+        [HttpPut]
+        public IHttpActionResult PersonelGuncelle(int id, TBLPERSONEL p)
+        {
+            TBLPERSONEL personel = db.TBLPERSONEL.FirstOrDefault(k => k.ID == id);
+            personel.PERSONEL =p.PERSONEL ;
+
+            db.SaveChanges();
+
+            return Ok<string>("Personel güncellenmiştir...");
+        }
+
+
         public IEnumerable<Kitaplar> GetKitaplar() => db.TBLKITAP.Select(k => new Kitaplar
         {
             ID = k.ID,

@@ -5,19 +5,20 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
+using MvcKutuphane.CustomClasses;
 using MvcKutuphane.Models.Entity;
 using PagedList;
 using PagedList.Mvc;
 
 namespace MvcKutuphane.Controllers
 {
+    [CustomAuthorization(LoginPage = "~/AdminLogin/GirisYap/")]
     public class KitapController : Controller
     {
         DBKUTUPHANEEntities db = new DBKUTUPHANEEntities();
         // GET: Kitap
         public ActionResult Index(int sayfa = 1)
         {
-            //var kitaplar = db.TBLKITAP.ToList();
             var kitaplar = db.TBLKITAP.ToList().ToPagedList(sayfa, 6);
             return View(kitaplar);
         }
@@ -33,10 +34,8 @@ namespace MvcKutuphane.Controllers
                     Text = item.AD,
                     Value = item.ID.ToString()
                 });
-                //Debug.WriteLine(item.AD);
             }
             ViewBag.KATEGORI = k;
-            //Debug.WriteLine(a); debug ekranına a değerini bastırıyor.
 
             List<SelectListItem> y = new List<SelectListItem>();
             foreach (var item in db.TBLYAZAR.ToList())
@@ -57,6 +56,12 @@ namespace MvcKutuphane.Controllers
             if (!ModelState.IsValid)
             {
                 return View("KitapEkle");
+            }
+            var kitapSorgu = db.TBLKITAP.FirstOrDefault(x => x.AD == kitap.AD);
+            if (kitapSorgu != null)
+            {
+                TempData.Add("errorKitap", "Bu ada ait kitap bulunuyor.");
+                return RedirectToAction("Index");
             }
             var ktg = db.TBLKATEGORI.Where(k => k.ID == kitap.KATEGORI).FirstOrDefault();
             var yzr = db.TBLYAZAR.Where(y => y.ID == kitap.YAZAR).FirstOrDefault();

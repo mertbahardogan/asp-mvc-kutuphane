@@ -111,6 +111,10 @@
           </Key>
           <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PERSONEL" Type="varchar" MaxLength="50" />
+          <Property Name="KullaniciAdi" Type="varchar" MaxLength="20" />
+          <Property Name="Sifre" Type="varchar" MaxLength="60" />
+          <Property Name="Rol" Type="varchar" MaxLength="20" />
+          <Property Name="Fotograf" Type="varchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="TBLUYELER">
           <Key>
@@ -378,6 +382,10 @@
           <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PERSONEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TBLHAREKET" Relationship="DBKUTUPHANEModel.FK_TBLHAREKET_TBLPERSONEL" FromRole="TBLPERSONEL" ToRole="TBLHAREKET" />
+          <Property Name="KullaniciAdi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Sifre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Rol" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Fotograf" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TBLUYELER">
           <Key>
@@ -695,6 +703,10 @@
           <EntitySetMapping Name="TBLPERSONEL">
             <EntityTypeMapping TypeName="DBKUTUPHANEModel.TBLPERSONEL">
               <MappingFragment StoreEntitySet="TBLPERSONEL">
+                <ScalarProperty Name="Fotograf" ColumnName="Fotograf" />
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="PERSONEL" ColumnName="PERSONEL" />
               </MappingFragment>

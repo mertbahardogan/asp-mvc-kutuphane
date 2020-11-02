@@ -20,7 +20,7 @@
         <AssociationConnector Association="DBKUTUPHANEModel.FK_TBLKITAP_TBLKATEGORI" ManuallyRouted="false" />
         <AssociationConnector Association="DBKUTUPHANEModel.FK_TBLKITAP_TBLYAZAR" ManuallyRouted="false" />
         <AssociationConnector Association="DBKUTUPHANEModel.FK_TBLHAREKET_TBLPERSONEL" />
-        <EntityTypeShape EntityType="DBKUTUPHANEModel.TBLHAKKIMIZDA" Width="1.5" PointX="10.375" PointY="5.125" />
+        <EntityTypeShape EntityType="DBKUTUPHANEModel.TBLHAKKIMIZDA" Width="1.5" PointX="10.375" PointY="6.5" />
         <EntityTypeShape EntityType="DBKUTUPHANEModel.TBLILETISIM" Width="1.5" PointX="10.375" PointY="0.625" />
         <EntityTypeShape EntityType="DBKUTUPHANEModel.TBLMESAJLAR" Width="1.5" PointX="5.375" PointY="7.75" />
         <EntityTypeShape EntityType="DBKUTUPHANEModel.TBLDUYURU" Width="1.5" PointX="7.375" PointY="7.75" />

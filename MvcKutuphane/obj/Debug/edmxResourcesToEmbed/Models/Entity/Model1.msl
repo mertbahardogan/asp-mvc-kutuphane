@@ -65,6 +65,10 @@
     <EntitySetMapping Name="TBLPERSONEL">
       <EntityTypeMapping TypeName="DBKUTUPHANEModel.TBLPERSONEL">
         <MappingFragment StoreEntitySet="TBLPERSONEL">
+          <ScalarProperty Name="Fotograf" ColumnName="Fotograf" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="PERSONEL" ColumnName="PERSONEL" />
         </MappingFragment>

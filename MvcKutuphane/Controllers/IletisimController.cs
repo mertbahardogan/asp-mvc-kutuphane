@@ -1,4 +1,5 @@
-﻿using MvcKutuphane.Models.Entity;
+﻿using MvcKutuphane.CustomClasses;
+using MvcKutuphane.Models.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Web.Mvc;
 
 namespace MvcKutuphane.Controllers
 {
+    [CustomAuthorization(LoginPage = "~/AdminLogin/GirisYap/")]
     public class IletisimController : Controller
     {
         DBKUTUPHANEEntities db = new DBKUTUPHANEEntities();

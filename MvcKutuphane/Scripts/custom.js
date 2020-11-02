@@ -129,7 +129,7 @@ $(function () {
 //ekleme başarılı
 $(function () {
     $("form").submit(function () {
-        swal("Ekleme başarılı!", {
+        swal("Yönlendiriliyorsunuz...", {
             buttons: false,
             timer: 30000,
         });

@@ -12,8 +12,14 @@
 <br />
 <a href="~/Kategori/Pasif/" class="btn btn-danger btn-sm">Pasif Kategoriler</a>
 <br />
+@if (TempData["errorKategori"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["errorKategori"]
+    </div>
+}
 <br />
-<table class="table table-striped table-bordered responsive" oncopy='return false' oncut='return false' id="tblKategori">
+<table class="table table-striped table-bordered responsive" id="tblKategori">
     <thead>
         <tr>
             <th>ID</th>
@@ -25,12 +31,12 @@
     <tbody>
         @foreach (var kategori in Model)
         {
-        <tr>
-            <td>@kategori.ID</td>
-            <td>@kategori.AD</td>
-            <td><a href="/Kategori/KategoriGetir/@kategori.ID" class="btn btn-secondary">Güncelle</a></td>
-            <td><a class="btn btn-danger btnSil" data-id="@kategori.ID" data-url="/Kategori/KategoriSil/">Pasifleştir</a></td>
-        </tr>
+            <tr>
+                <td>@kategori.ID</td>
+                <td>@kategori.AD</td>
+                <td><a href="/Kategori/KategoriGetir/@kategori.ID" class="btn btn-secondary">Güncelle</a></td>
+                <td><a class="btn btn-danger btnSil" data-id="@kategori.ID" data-url="/Kategori/KategoriSil/">Pasifleştir</a></td>
+            </tr>
         }
     </tbody>
 </table>

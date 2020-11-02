@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MvcKutuphane.CustomClasses;
 using MvcKutuphane.Models.Entity;
 
 namespace MvcKutuphane.Controllers
 {
+    [CustomAuthorization(LoginPage = "~/AdminLogin/GirisYap/")]
     public class KategoriController : Controller
     {
         DBKUTUPHANEEntities db = new DBKUTUPHANEEntities();
@@ -22,6 +24,7 @@ namespace MvcKutuphane.Controllers
         {
             return View("KategoriEkle");
         }
+
         [HttpGet]
         public ActionResult ekle(String kategoriAdi) //adı önemli değil
         {
@@ -31,11 +34,17 @@ namespace MvcKutuphane.Controllers
             }
 
             TBLKATEGORI yeni = new TBLKATEGORI();
-
+            var kategori = db.TBLKATEGORI.FirstOrDefault(x => x.AD ==yeni.AD);
+            if (kategori != null)
+            {
+                TempData.Add("errorKategori", "Bu kategori adı kullanılmaktadır.");
+                return RedirectToAction("Index");
+            }
             yeni.AD = kategoriAdi;
             db.TBLKATEGORI.Add(yeni);
             yeni.DURUM = true;
             db.SaveChanges();
+            //TempData.Add("message", kategoriAdi +" adlı kategori başarıyla eklendi.");
             return Json(new { success = true, message = "Başarıyla Eklendi." }, JsonRequestBehavior.AllowGet);
         }
         public ActionResult KategoriSil(int id)
